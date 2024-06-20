@@ -3,13 +3,133 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
- <h1>{% trans "About us" %}</h1> 
- <ul>
-    <li>{% trans "Who we are" %} </li>
-    <li>{% trans "Strategies" %}</li>
-    <li>{% trans "Team members" %}</li>
-    <li>{% trans "Awards" %}</li>
-    <li>{% trans "Gallery" %}</li>
-    <li>{% trans "Solutions" %}</li>
- </ul>
+<h1>{% trans "About us" %}</h1>
+<ul>
+   <li><a href="#who_we_are">{% trans "Who we are" %}</a></li>
+   <li><a href="#strategies">{% trans "Strategies" %}</a></li>
+   <li><a href="#team">{% trans "Team members" %}</a></li>
+   <li><a href="#awards">{% trans "Awards" %}</a></li>
+   <li><a href="#gallery">{% trans "Gallery" %}</a></li>
+   <li><a href="#solutions">{% trans "Solutions" %}</a></li>
+</ul>
+
+<h2 id="who_we_are">{% trans "Who we are" %}</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos necessitatibus
+   alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi. Asperiores?
+</p>
+<p>
+   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos necessitatibus
+   alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?
+</p>
+<h2 id="strategies">{% trans "Strategies" %}</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos necessitatibus
+   alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi. Asperiores?
+</p>
+<p>
+   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos necessitatibus
+   alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi nisi nobis, nesciunt omnis quos
+   necessitatibus alias velit natus autem. Dolorum ipsum nihil sed delectus eligendi quibusdam fugiat blanditiis animi.
+   Asperiores?
+</p>
+
+<h2 id="awards">{% trans "Awards" %}</h2>
+<table>
+   <tbody>
+      {% for item in '12' %}
+      <tr>
+         <td>
+            <img src="https://placehold.co/300" alt="">
+            <br>
+            Red dot
+            <br>
+            2022
+
+         </td>
+         <td>
+            <img src="https://placehold.co/300" alt="">
+            <br>
+            iDesign
+            <br>
+            2024
+         </td>         
+      </tr>
+      {% endfor %}     
+   </tbody>
+</table>
+
+<h2 id="gallery">{% trans "Gallery" %}</h2>
+<table>
+   <tbody>
+      <tr>
+      {% for item in '1234' %}
+         <td>
+            <img src="https://placehold.co/250" alt="">
+            <br>
+            Red dot
+            <br>
+            2022
+
+         </td>
+         {% endfor %}
+      </tr>
+   </tbody>
+</table>
+
+
+<h2 id="team">{% trans "Team memeber" %}</h2>
+<table>
+   <tbody>
+      {% for item in '12' %}
+      <tr>
+         <td>
+            <img src="https://placehold.co/300" alt="">
+            <br>
+            Rahim
+            <br>
+            Designer and researcher
+
+         </td>
+         <td>
+            <img src="https://placehold.co/300" alt="">
+            <br>
+            Sorme
+            <br>
+            Designer and researcher
+         </td>         
+      </tr>
+      {% endfor %}     
+   </tbody>
+</table>
+
+
+<h2 id="solutions">{% trans "Solutions" %}</h2>
+<table>
+   <tbody>
+      <tr>
+      {% for item in '1234' %}
+         <td>
+            <img src="https://placehold.co/250" alt="">
+            <br>
+            Sample project
+            <br>
+            <a href="">More ...</a>
+
+         </td>
+         {% endfor %}
+      </tr>
+   </tbody>
+</table>
+   
 {% endblock content %}
