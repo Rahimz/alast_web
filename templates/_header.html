@@ -1,0 +1,23 @@
+{% load i18n %}
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'generals:home' %}">{% trans "Home" %}</a>
+        </li>
+        <li>
+            <a href="{% url 'generals:solutions' %}">{% trans "Solutions" %}</a>
+        </li>
+        <li>
+            <a href="{% url 'generals:publications' %}">{% trans "Publications" %}</a>
+        </li>
+        <li>
+            <a href="{% url 'generals:clients' %}">{% trans "Clients" %}</a>
+        </li>
+        <li>
+            <a href="{% url 'generals:about_us' %}">{% trans "About us" %}</a>
+        </li>
+        <li>
+            <a href="{% url 'generals:contact_us' %}">{% trans "Contact us" %}</a>
+        </li>
+    </ul>
+</nav>

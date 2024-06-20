@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block title %}{{ page_title }}{% endblock title %}
+
+{% block content %}
+ <h1>{% trans "About us" %}</h1> 
+ <ul>
+    <li>{% trans "Who we are" %} </li>
+    <li>{% trans "Strategies" %}</li>
+    <li>{% trans "Team members" %}</li>
+    <li>{% trans "Awards" %}</li>
+    <li>{% trans "Gallery" %}</li>
+    <li>{% trans "Solutions" %}</li>
+ </ul>
+{% endblock content %}
