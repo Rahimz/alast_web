@@ -48,3 +48,20 @@ And we make a new model like this:
 class Solution(TimeStampedModel):
    ...
 ```
+
+
+```python
+class GregoryToHijriConverter(models.Model):
+    conversion_date = models.DateField()
+    gregorian_date = models.DateField()
+    hijri_date = models.DateField()
+```
+
+```python
+class PdfExcelMaker(models.Model):
+    file_type = models.CharField(max_length=255)
+    file_name = models.CharField(max_length=255)
+    file = models.FileField(upload_to='files/')
+
+    def __str__(self):
+```

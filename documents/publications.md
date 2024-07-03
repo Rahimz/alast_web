@@ -45,7 +45,7 @@ Page 3: Publications Article:
 ### PublicationArticle
 
     ```python
-    class PublicationArticle(models.Model):
+    class PublicationArticle(GregoryToHijriConverter):
         title = models.CharField(max_length=255)
         content = models.TextField()
         pdf = models.FileField(upload_to='pdf/')
@@ -53,12 +53,13 @@ Page 3: Publications Article:
         authors = models.ForeignKey(PublicationAuthor, on_delete=models.CASCADE)
         category = models.ForeignKey(PublicationCategory, on_delete=models.CASCADE)
     ```
-
-### Contract
+    
+### Contact
     ```python
-    class Contact(models.Model):
+    class Contact(PdfExcelMaker):
         static_data = models.TextField()
         maps = models.CharField(max_length=255)
         contact_form = models.TextField()
         social_links = models.URLField()
     ```
+    
