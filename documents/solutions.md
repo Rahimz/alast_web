@@ -38,7 +38,7 @@ Solutions Details:
 
     ```python
     class Solution(TimeStampedModel):
-        title = models.CharField()
+        title = models.CharField(max_length=255)
         slug = models.SlugFiels(allow_unicode=True)
         description = models.TextField()
         image (uploud_to = 'images/')
