@@ -7,13 +7,16 @@
 </head>
 <body>
     <header>
-        {% include "_header.html" %}
-        <!-- slider -->
-        <img src="https://placehold.co/1800x400" alt="">
+        {% include "_header.html" %}                
     </header>
-    {% block content %}
-      
-    {% endblock content %}
+    <main>
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+    <footer>
+       {% include "_footer.html" %}
+    </footer>
     
 </body>
 </html>

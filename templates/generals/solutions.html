@@ -5,14 +5,14 @@
 {% block content %}
  <h1>{% trans "Solutions" %}</h1> 
  <ul>
-    <li>{% trans "Products" %} </li>
-    <li>{% trans "Furniture" %}</li>
-    <li>{% trans "Graphic design" %}</li>
-    <li>{% trans "Packaging" %}</li>
-    <li>{% trans "PSS" %}</li>
-    <li>{% trans "Service" %}</li>
-    <li>{% trans "Brand" %}</li>
-    <li>{% trans "UCID research" %}</li>
-    <li>{% trans "UX research" %}</li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Products" %} </a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Furniture" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Graphic design" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Packaging" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "PSS" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Service" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "Brand" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "UCID research" %}</a></li>
+    <li><a href="{% url 'generals:solution' %}">{% trans "UX research" %}</a></li>
  </ul>
 {% endblock content %}
