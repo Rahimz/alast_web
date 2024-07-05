@@ -30,12 +30,14 @@ Page 3: Publications Article:
 
 ### PublicationAuthor
 
+    We dont need model for authors. Authors will be a character field.
     ```python
     class PublicationAuthor(models.Model):
         name = models.CharField(max_length=255)
     ```
-    
+
 ### PublicationList
+
     ```python
     class PublicationList(models.Model):
         title = models.CharField(max_length=255)
@@ -53,13 +55,3 @@ Page 3: Publications Article:
         authors = models.ForeignKey(PublicationAuthor, on_delete=models.CASCADE)
         category = models.ForeignKey(PublicationCategory, on_delete=models.CASCADE)
     ```
-    
-### Contact
-    ```python
-    class Contact(PdfExcelMaker):
-        static_data = models.TextField()
-        maps = models.CharField(max_length=255)
-        contact_form = models.TextField()
-        social_links = models.URLField()
-    ```
-    
