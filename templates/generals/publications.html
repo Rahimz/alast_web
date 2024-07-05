@@ -4,10 +4,12 @@
 
 {% block content %}
  <h1>{% trans "Publications" %}</h1> 
- <ul>
-    <li>{% trans "Article 1" %} </li>
-    <li>{% trans "Article 2" %} </li>
-    <li>{% trans "Article 3" %} </li>
-    <li>{% trans "Article 4" %} </li>
- </ul>
+ {% for item in '12345' %}
+   <div>      
+      <h4>A long and very descriptive title of very scientific aticle {{ item }}</h4>
+      <p>Author 1, Author 2, Author 3</p>
+      <a href="">Abstract</a> | <a href="">PDF</a> | <a href="">HTML</a>  
+      <hr>
+   </div>
+ {% endfor %}
 {% endblock content %}
