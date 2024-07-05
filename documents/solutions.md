@@ -38,10 +38,10 @@ Solutions Details:
 
     ```python
     class Solution(TimeStampedModel):
-        title = models.CharField()
+        title = models.CharField(max_length=255)
         slug = models.SlugFiels(allow_unicode=True)
         description = models.TextField()
-        image (uploud_to = 'images/')
+        image = models.ImageField(uploud_to = 'images/')
         client = mdoels.CharField(null=True, blank=True)
         client_logo = models.ImageField(null=True, blank=True)
         category = models.ForeignKey(SolutionCategory, null=True, blank=True, on_delete=models.SET_NULL) # related with foreignkey to " Solution Category model"

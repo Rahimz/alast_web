@@ -1,3 +1,7 @@
+# Publications app
+
+## Pages
+
 Page 1: Publications
     - List of publications
 
@@ -15,27 +19,47 @@ Page 3: Publications Article:
     -authors
     -category
 
-Models in the app:
-    1 Publication category:
-        -name
+## Models
 
-    2 Publication Author:
-        -name
+### PublicationCategory
 
-    3 Publication Lists:
-        - title
-        -category: related with foreignkey to "publication category model"
+    ```python
+    class PublicationCategory(models.Model):
+        name = models.CharField(max_length=255)
+    ```
 
-    4 Publication Articles: 
-        -title 
-        -content
-        -PDF: upload to "pdf/"
-        -summary
-        -authors: related with foreignkey to "publication Author model"
-        -category: related with foreignkey to "publication category model"
+### PublicationAuthor
 
-    5 Contact: Attributes: (Is it necessary?)
-        -static data
-        -map
-        -contact form
-        -social links
+    ```python
+    class PublicationAuthor(models.Model):
+        name = models.CharField(max_length=255)
+    ```
+    
+### PublicationList
+    ```python
+    class PublicationList(models.Model):
+        title = models.CharField(max_length=255)
+        category = models.ForeignKey(PublicationCategory, on_delete=models.CASCADE)
+    ```
+
+### PublicationArticle
+
+    ```python
+    class PublicationArticle(GregoryToHijriConverter):
+        title = models.CharField(max_length=255)
+        content = models.TextField()
+        pdf = models.FileField(upload_to='pdf/')
+        summary = models.TextField()
+        authors = models.ForeignKey(PublicationAuthor, on_delete=models.CASCADE)
+        category = models.ForeignKey(PublicationCategory, on_delete=models.CASCADE)
+    ```
+    
+### Contact
+    ```python
+    class Contact(PdfExcelMaker):
+        static_data = models.TextField()
+        maps = models.CharField(max_length=255)
+        contact_form = models.TextField()
+        social_links = models.URLField()
+    ```
+    
