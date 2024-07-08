@@ -5,9 +5,7 @@ from django.views.generic.base import TemplateView
 app_name = 'generals'
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='generals/home.html'), {'page_title': 'Home'}, name='home'),
-    path('solutions/', TemplateView.as_view(template_name='generals/solutions.html'), {'page_title': 'Solutions'}, name='solutions'),
-    path('solution/', TemplateView.as_view(template_name='generals/solution.html'), {'page_title': 'Solution'}, name='solution'),
+    path('', TemplateView.as_view(template_name='generals/home.html'), {'page_title': 'Home'}, name='home'),    
     path('publications/', TemplateView.as_view(template_name='generals/publications.html'), {'page_title': 'Publications'}, name='publications'),
     path('clients/', TemplateView.as_view(template_name='generals/clients.html'), {'page_title': 'Clients'}, name='clients'),
     path('contact-us/', TemplateView.as_view(template_name='generals/contact_us.html'), {'page_title': 'Contact us'}, name='contact_us'),
