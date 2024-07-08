@@ -67,5 +67,5 @@ class Solution(TimeStampedModel):
 
     def save(self, *args, **kwargs):
         self.thumbnail = make_thumbnail(self.cover_image)
-        self.slug = slugify(self.name, allow_unicode=True)
+        self.slug = slugify(self.title, allow_unicode=True)
         return super().save(*args, **kwargs)

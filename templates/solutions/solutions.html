@@ -15,4 +15,25 @@
     <li><a href="{% url 'solutions:solution_details' %}">{% trans "UCID research" %}</a></li>
     <li><a href="{% url 'solutions:solution_details' %}">{% trans "UX research" %}</a></li>
  </ul>
+ <div>
+   {% for solution in solutions %}
+     <div>
+      <a href="{% url 'solutions:solution_details' %}">
+         {% if solution.thumbnail %}
+         <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="150px" height="auto">
+         {% else %}
+         <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="150px" height="auto">        
+         {% endif %}
+      </a>
+      
+      <a href="{% url 'solutions:solution_details' %}">
+         <h4>{{ solution.title }}</h4>
+      </a>
+      <span>{{ solution.category }}</span>  
+      <p>{{ solution.description | truncatewords:5 }}</p>
+
+     </div>
+
+   {% endfor %}
+ </div>
 {% endblock content %}

@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 
-
+from .models import Solution
 
 def SolutionsView(request):
+    solutions = Solution.objects.all()
     context = dict(
         page_title=_("Solutios"),
+        solutions=solutions
     )
     
     return render(
