@@ -1,3 +1,6 @@
 from django.db import models
+from tools.models import TimeStampedModel
 
-# Create your models here.
+
+class SolutionCategory(TimeStampedModel):
+    pass

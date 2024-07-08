@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'generals.apps.GeneralsConfig',
     'solutions.apps.SolutionsConfig',
+    'tools.apps.ToolsConfig',
 
 ]
 
