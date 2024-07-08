@@ -66,3 +66,5 @@
 - [mutimedia](documents/mutimedia.md)
 - [contacts](documents/contacts.md)
 - [tools](documents/tools.md)
+- [Desing breif](documents/briefs.md)
+- [generals](documents/generals.md)
