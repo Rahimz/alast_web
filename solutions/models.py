@@ -4,6 +4,8 @@ from django.utils.text import slugify
 
 from tools.models import TimeStampedModel
 from tools.make_thumbnail import make_thumbnail
+from clients.models import Client
+
 
 class SolutionCategory(TimeStampedModel):
     parent = models.ForeignKey(
@@ -48,6 +50,14 @@ class Solution(TimeStampedModel):
         related_name='solutions',
         null=True, 
         blank=True, 
+    )
+    client = models.ForeignKey(
+        Client,
+        on_delete=models.SET_NULL,
+        verbose_name=_("Client"),
+        related_name='solutions',
+        null=True,
+        blank=True
     )
     description = models.TextField(
         _("Description"),
