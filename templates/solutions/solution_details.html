@@ -3,26 +3,18 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
- <h1>{% trans "Solution" %}</h1> 
- <h2>
-   
-   {% trans "Client" %}:
-   {% if solution.client %}
-   {{ solution.client }}
-   {% else %}
-   ---
-   {% endif %}
- </h2> 
+ <h1>{% trans "Solutions" %}</h1> 
+ <h2>[Client name]</h2> 
  <figure>
-   {% if solution.client %}
-   <img src="{{ solution.client.logo.url }}" alt="{{ solution.client }}" height="60px" width="auto">
-   <!-- <figcaption>Client logo</figcaption>      -->
-   {% endif %}
+    <img src="https://placehold.co/250" alt="">
+    <figcaption>Client logo</figcaption>
 </figure>
 <div>
    <h3>{% trans "Project description" %}</h3>
    <p>
-      {{ solution.description }}     
+      {% lorem %}
+      {% lorem %} <br>
+      {% lorem %}      
    </p>
 </div>
 <div>

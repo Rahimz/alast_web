@@ -5,6 +5,7 @@ app_name = 'solutions'
 
 urlpatterns = [
     path('', views.SolutionsView, name='solutions'),
-    path('details/', views.SolutionView, name='solution_details'),
+    path('/details/', views.SolutionDetailsView, name='solution_details'), #should be removed
+    path('/<str:slug>/', views.SolutionView, name='solution'),
 ]
 

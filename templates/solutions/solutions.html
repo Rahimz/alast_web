@@ -18,7 +18,7 @@
  <div>
    {% for solution in solutions %}
      <div>
-      <a href="{% url 'solutions:solution_details' %}">
+      <a href="{% url 'solutions:solution' solution.slug %}">
          {% if solution.thumbnail %}
          <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="150px" height="auto">
          {% else %}
@@ -26,7 +26,7 @@
          {% endif %}
       </a>
       
-      <a href="{% url 'solutions:solution_details' %}">
+      <a href="{% url 'solutions:solution' solution.slug %}">
          <h4>{{ solution.title }}</h4>
       </a>
       <span>{{ solution.category }}</span>  
