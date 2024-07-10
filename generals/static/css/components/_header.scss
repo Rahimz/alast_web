@@ -1,0 +1,25 @@
+header, header div {display: flex;}
+
+header {
+    justify-content: center;
+    position: fixed; top: 0;
+    width: 100vw;
+    padding: 20px 0;
+    background-color: $c_ww;
+    border-bottom: 1px dotted gray;
+
+    div {
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        // background-color: aquamarine;
+        img {height: 60px;}
+    }
+    nav a {
+        text-decoration: none;
+        margin-left: 15px;
+        // font-weight: 100;
+        color: $c_bb;
+        &.active {color: $orng;}
+    }
+}

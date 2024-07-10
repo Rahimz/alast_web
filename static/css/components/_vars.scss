@@ -1,0 +1,32 @@
+// $fonts: "../assets";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+h1, h2, h3, h4, h5, h6 {display: block; font-weight: 700; margin: 0;}
+
+// $ww: 1120px;    // main
+
+// $w_sl: 270px;   // shop     > (4 x 270) + (3 x 20)
+// $p_sl: 20px;
+// $w_pl: 208px;   // people   > (5 x 208) + (4 x 25)
+// $p_pl: 25px;
+
+// $gborder: 1px solid rgba(0,0,0,0.3);
+
+
+// @import "fontawesome";
+
+
+
+// // greens
+$orng: #ff9800;
+// $green1: #5ba67d;
+// $green2: #527770;
+// $green3: #526560;
+// $green4: #132926;
+// $green-footer: #425159;
+
+// // grays
+$c_ww: white;
+$gray220: rgb(220, 220, 220);
+$gray70: rgb(70,70,70);
+$c_bb: black;

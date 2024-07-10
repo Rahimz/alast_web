@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-weight: 700;
+  margin: 0;
+}
+
+header, header div {
+  display: flex;
+}
+
+header {
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 20px 0;
+  background-color: white;
+  border-bottom: 1px dotted gray;
+}
+header div {
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+header div img {
+  height: 60px;
+}
+header nav a {
+  text-decoration: none;
+  margin-left: 15px;
+  color: black;
+}
+header nav a.active {
+  color: #ff9800;
+}
+
+footer, footer div, footer nav {
+  display: flex;
+}
+
+footer {
+  justify-content: center;
+  width: 100%;
+  padding: 120px 0;
+  background-color: black;
+}
+footer div.fbox {
+  justify-content: space-between;
+  align-items: start;
+  width: 1100px;
+}
+footer div.fbox .fleft {
+  width: 50%;
+}
+footer div.fbox .fleft img {
+  height: 80px;
+}
+footer div.fbox nav {
+  flex-direction: column;
+  width: 25%;
+}
+footer div.fbox nav:nth-child(2) a {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+footer div.fbox nav:nth-child(3) a {
+  font-size: 14px;
+  font-weight: 100;
+  color: rgb(220, 220, 220);
+}
+footer div.fbox nav a {
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+footer div.fbox nav a.active {
+  color: #ff9800;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+main {
+  margin: 100px auto 0;
+  width: 1100px;
+  padding: 100px 0;
+}
