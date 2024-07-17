@@ -5,6 +5,7 @@ header {
     position: fixed; top: 0;
     width: 100vw;
     padding: 20px 0;
+    z-index: 100;
     background-color: $c_ww;
     border-bottom: 1px dotted gray;
 
@@ -18,8 +19,7 @@ header {
     nav a {
         text-decoration: none;
         margin-left: 15px;
-        // font-weight: 100;
         color: $c_bb;
-        &.active {color: $orng;}
+        &:hover, &.active {color: $orng;}
     }
 }
