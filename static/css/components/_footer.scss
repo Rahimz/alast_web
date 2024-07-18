@@ -7,6 +7,7 @@ footer {
     padding: 120px 0;
     background-color: $c_bb;
 
+
     div.fbox {
         justify-content: space-between;
         align-items: start;
@@ -30,7 +31,7 @@ footer {
             &:nth-child(3) a {
                 font-size: 14px;
                 font-weight: 100;
-                color: $gray220;
+                color: $g220;
             }
             a {
                 text-decoration: none;

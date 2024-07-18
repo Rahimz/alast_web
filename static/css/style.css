@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -15,6 +15,7 @@ header {
   top: 0;
   width: 100vw;
   padding: 20px 0;
+  z-index: 100;
   background-color: white;
   border-bottom: 1px dotted gray;
 }
@@ -31,7 +32,7 @@ header nav a {
   margin-left: 15px;
   color: black;
 }
-header nav a.active {
+header nav a:hover, header nav a.active {
   color: #ff9800;
 }
 
@@ -78,13 +79,121 @@ footer div.fbox nav a.active {
   color: #ff9800;
 }
 
-body {
-  margin: 0;
+* {
+  box-sizing: border-box;
   font-family: "Outfit", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+body {
+  margin: 0;
+}
+
+.crumbbox {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 180px;
+  left: 0;
+}
+.crumbbox .crumbline {
+  height: 1px;
+  width: calc((100vw - 1160px) / 2);
+  margin-right: 30px;
+  background-color: rgb(220, 220, 220);
+}
+.crumbbox .braedcrumb {
+  color: rgb(180, 180, 180);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+.crumbbox .braedcrumb a, .crumbbox .braedcrumb span {
+  color: black;
+}
+.crumbbox .braedcrumb a:hover {
+  color: #ff9800;
+}
+
+.page-title {
+  position: fixed;
+  bottom: 5vw;
+  left: 5%;
+  color: rgb(180, 180, 180);
+  font-size: 12px;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+}
+
 main {
-  margin: 100px auto 0;
-  width: 1100px;
-  padding: 100px 0;
+  margin: 105px auto 0;
+  width: 1160px;
+  padding: 120px 30px;
+}
+main h1.main-title {
+  font-size: 72px;
+}
+main h1.main-title span.mil-thin {
+  font-weight: 100;
+}
+
+button.btn, a.btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 15px 15px 50px;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+button.btn img, a.btn img {
+  width: 40px;
+  margin-left: 30px;
+  transition: all 0.4s ease-in-out;
+}
+button.btn:hover, a.btn:hover {
+  transform: scale(1.01);
+}
+button.btn:hover img, a.btn:hover img {
+  transform: scale(1.15);
+}
+
+a.btn-orange {
+  background-color: #ff9800;
+  color: black;
+}
+
+a.btn-white {
+  background-color: white;
+  color: black;
+}
+
+a.btn-black1 {
+  background-color: black;
+  color: white;
+}
+
+a.btn-black2 {
+  background-color: black;
+  color: #999999;
+}
+
+div.btn-shape {
+  width: 240px;
+  height: 70px;
+  background: url("../assets/test.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 50px;
 }

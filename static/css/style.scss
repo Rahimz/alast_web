@@ -2,16 +2,106 @@
 @import "components/header";
 @import "components/footer";
 
-body {
-    margin: 0;
-    font-family: "Outfit", sans-serif;
+* {box-sizing: border-box; font-family: "Outfit", sans-serif;}
+a {text-decoration: none; transition: 0.2s;}
+body {margin: 0;}
+.crumbbox {
+    display: flex; align-items: center;
+    position: absolute; top: 180px; left: 0;
+
+    .crumbline {
+        height: 1px; width: calc((100vw - 1160px) / 2);
+        margin-right: 30px;
+        background-color: $g220;
+    }
+    .braedcrumb {
+        color: $g180;
+        text-transform: uppercase;
+        font-size: 12px; font-weight: 400; letter-spacing: 3px;
+        a, span {color: $c_bb;}
+        a:hover {color: $orng;}
+    }
 }
+.page-title {
+    position: fixed; bottom: calc(100vw / 20); left: 5%;
+    color: $g180; font-size: 12px;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    transform: scale(-1, -1);
+}
+
+
+
+
+
+
+
+
+
 
 
 main {
-    margin: 100px auto 0;
-    width: 1100px;
-    padding: 100px 0;
+    // position: relative;
+    margin: 105px auto 0;
+    width: 1160px;
+    padding: 120px 30px;
     // height: 500px;
-    // background-color: cadetblue;
+    // background-color: rgba(95, 158, 160, 0.171);
+
+    h1.main-title {
+        font-size: 72px;
+        span.mil-thin {font-weight: 100;}
+    }
 }
+
+
+// btn & a
+button.btn, a.btn {
+    display: inline-flex;
+    // display: inline;
+    align-items: center;
+    
+    border: none;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    
+    text-decoration: none;
+    padding: 15px 15px 15px 50px;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+
+    img {width: 40px; margin-left: 30px; transition: all .4s ease-in-out;}
+    &:hover {transform: scale(1.01);}
+    &:hover img {transform: scale(1.15);}
+}
+a.btn-orange {background-color: $orng; color: $c_bb;}
+a.btn-white {background-color: $c_ww; color: $c_bb;}
+a.btn-black1 {background-color: $c_bb; color: $c_ww;}
+a.btn-black2 {background-color: $c_bb; color: #999999;}
+
+div.btn-shape {
+    width: 240px;
+    height: 70px;
+
+    // with BG
+    background: url("../assets/test.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 50px;
+
+    // with IMG
+    // overflow: hidden;
+    img {}
+
+}
+
+
+
+
+
+
+
+
