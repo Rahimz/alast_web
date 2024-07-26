@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block title %}{{ page_title }}{% endblock title %}
+
+{% block content %}
+ <h1>{% trans "Clients" %}</h1> 
+<div style="display: flex;">
+   {% for client in clients %}     
+   <div style="justify-content: row; margin: 30px;">
+      <h2>{{ client }}</h2>
+      <img src="{{ client.logo.url }}" alt="" width="auto" height="150px">
+      <ul>
+         {% for solution in client.solutions.all %}
+         <li>  
+            <a href="{% url 'solutions:solution' solution.slug %}">{{ solution }}</a>
+         </li>
+         {% endfor %}
+      </ul>
+   </div>
+   {% endfor %}
+</div>
+    
+ 
+{% endblock content %}
