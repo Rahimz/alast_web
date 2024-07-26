@@ -73,9 +73,12 @@ class Solution(TimeStampedModel):
     )
     # client = mdoels.CharField(null=True, blank=True)
     # client_logo = models.ImageField(null=True, blank=True)
-    
+
+    def __str__(self):
+        return self.title
+        
 
     def save(self, *args, **kwargs):
-        self.thumbnail = make_thumbnail(self.cover_image)
+        self.thumbnail = make_thumbnail(self.cover_image.file)
         self.slug = slugify(self.title, allow_unicode=True)
         return super().save(*args, **kwargs)

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'solutions.apps.SolutionsConfig',
     'clients.apps.ClientsConfig',
     'tools.apps.ToolsConfig',
+    'multimedias.apps.MultimediasConfig',
 
 ]
 
