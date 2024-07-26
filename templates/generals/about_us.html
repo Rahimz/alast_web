@@ -64,21 +64,20 @@
 
 
 <h2 id="gallery">{% trans "Gallery" %}</h2>
-<table>
-   <tbody>
-      <tr>
-      {% for item in '1234' %}
-         <td>
-            <img src="https://placehold.co/250" alt="">
-            <br>
-            Red dot
-            <br>
-            2022
-         </td>
-         {% endfor %}
-      </tr>
-   </tbody>
-</table>
+{% for gallery in galleries %}
+<h3>{{ gallery }}</h3>
+<div style="display: flex;">
+   {% for image in gallery.images.all %}
+   <div style="justify-content: row; margin: 10px;">
+      <img src="{{ image.file.url }}" alt="" , height="auto" width="250">
+      <br>
+      {% if image.title %}
+      {{ image.title }}        
+      {% endif %}
+   </div>
+      {% endfor %}
+</div>
+{% endfor %}     
 
 
 <h2 id="team">{% trans "Team memeber" %}</h2>

@@ -6,7 +6,24 @@ from tools.make_thumbnail import make_thumbnail
 from solutions.models import Solution
 
 
+class Gallery(TimeStampedModel):
+    title = models.CharField(
+        _("Title"),
+        max_length=250,
+    )
+
+    def __str__(self):
+        return self.title
+    
+
+
 class Image(TimeStampedModel):
+    class ZoneChoice(models.TextChoices):
+        SOLUTION = 'solution', _("Solution")
+        ABOUT = 'about', _("About")
+
+
+
     solution = models.ForeignKey(
         Solution,
         verbose_name=_("Solution"),
@@ -14,6 +31,14 @@ class Image(TimeStampedModel):
         on_delete=models.SET_NULL,
         null=True,
         blank=True
+    )
+    gallery = models.ForeignKey(
+        Gallery,
+        verbose_name=_("Gallery"),
+        related_name='images',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
     )
     title = models.CharField(
         _("Title"),
@@ -24,6 +49,12 @@ class Image(TimeStampedModel):
     file = models.ImageField(
         _("File"),
         upload_to='multimedias/images/',
+    )
+    zone = models.CharField(
+        _("Zone"),
+        max_length=10,
+        choices=ZoneChoice.choices,
+        default=ZoneChoice.SOLUTION
     )
     image_alt = models.CharField(
         _("Image alt"),
