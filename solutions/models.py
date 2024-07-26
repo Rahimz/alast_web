@@ -82,3 +82,25 @@ class Solution(TimeStampedModel):
         self.thumbnail = make_thumbnail(self.cover_image.file)
         self.slug = slugify(self.title, allow_unicode=True)
         return super().save(*args, **kwargs)
+    
+
+class Award(TimeStampedModel):
+    title = models.CharField(
+        _("Title"),
+        max_length=250,
+    )
+    year = models.PositiveSmallIntegerField(
+        default=2024
+    )
+    description = models.TextField(
+        _("Description"),
+        blank=True
+    )
+    image = models.ImageField(
+        _("Image"),
+        upload_to='awards/'
+    )
+
+    def __str__(self):
+        return self.title
+    
