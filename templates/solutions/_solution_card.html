@@ -1,5 +1,5 @@
 {% load static %}
-<div>
+<div style="justify-content: row;">
     <a href="{% url 'solutions:solution' solution.slug %}">
        {% if solution.thumbnail %}
        <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="250px" height="auto">

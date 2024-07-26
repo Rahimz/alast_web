@@ -89,33 +89,24 @@
 
 
 <h2 id="team">{% trans "Team memeber" %}</h2>
-{% for member in team_members %}
-<div>
-   <img src="{{ member.avatar.url }}" alt="" , height="150" width="auto">
-   <br>
-   {{ member.user }}
-   <br>
-   {{ member.role }}
+<div style="display: flex;">
+   {% for member in team_members %}
+   <div>
+      <img src="{{ member.avatar.url }}" alt="" , height="150" width="auto">
+      <br>
+      {{ member.user }}
+      <br>
+      {{ member.role }}
+   </div>
 </div>
 {% endfor %}     
 
 
 <h2 id="solutions">{% trans "Solutions" %}</h2>
-<table>
-   <tbody>
-      <tr>
-      {% for item in '1234' %}
-         <td>
-            <img src="https://placehold.co/250" alt="">
-            <br>
-            Sample project
-            <br>
-            <a href="{% url 'solutions:solution_details' %}">More ...</a>
+<div style="display: flex;">
+   {% for solution in solutions %}
+   {% include "solutions/_solution_card.html" %}
+   {% endfor %}   
+</div>
 
-         </td>
-         {% endfor %}
-      </tr>
-   </tbody>
-</table>
-   
 {% endblock content %}

@@ -10,14 +10,18 @@
  </h1>
  
    {% for category in categories %}
-   <a href="{% url 'solutions:solution_details' %}">
-      <h1 class="main-title">
-         <span class="mil-thin">{{ category }}</span>
-      </h1>      
-   </a>
-   {% for solution in category.solutions.all %}
-   {% include "solutions/_solution_card.html" %}
-   {% endfor %}
+      <a href="{% url 'solutions:solution_details' %}">
+         <h1 class="main-title">
+            <span class="mil-thin">{{ category }}</span>
+         </h1>      
+      </a>
+      
+      <div style="display: flex;">      
+         {% for solution in category.solutions.all %}
+         {% include "solutions/_solution_card.html" %}
+         {% endfor %}
+      </div>    
+
    {% endfor %}
    
 {% endblock content %}
