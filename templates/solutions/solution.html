@@ -27,24 +27,20 @@
 </div>
 <div>
    <h3>{% trans "Project gallery" %}</h3>
-   <table>
-      <tbody>
-         {% for item in '12' %}
-           
-         <tr>
-            {% for item in '1234' %}
-            <td>
-               <img src="https://placehold.co/250" alt="">
-               <br>
-               Sample project
-               <br>              
-               
-            </td>
-            {% endfor %}
-         </tr>
-         {% endfor %}
-      </tbody>
-   </table>
+   {% for item in solution.images.all %}
+   <div>
+
+      <a href="{{ item.file.url }}" target="_blank">
+         <img src="{{ item.file.url }}" alt="item.title" height="250" width="auto">
+      </a>
+      <br>
+      {% if item.title %}
+        {{ item.title }}
+      {% endif %}
+      
+   </div>
+   {% endfor %}
+
 </div>
 
 {% endblock content %}

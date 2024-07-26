@@ -15,6 +15,12 @@ class Image(TimeStampedModel):
         null=True,
         blank=True
     )
+    title = models.CharField(
+        _("Title"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
     file = models.ImageField(
         _("File"),
         upload_to='multimedias/images/',
