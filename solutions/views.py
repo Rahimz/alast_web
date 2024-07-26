@@ -11,7 +11,7 @@ def SolutionsView(request):
         page_title=_("Solutios"),
         solutions=solutions,
         categories=categories,
-        crumbs=[(_("Solutions"), 'solutions:solutions')]
+        crumbs=[(_("Solutions"), None)]
     )
     
     return render(
