@@ -1,10 +1,47 @@
 {% extends "_base.html" %}
 
+{% load i18n static %}
+
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
 {% comment %}
 {% include "_slider.html" %}
 {% endcomment %}
- <h1>Home</h1> 
+
+<div class="crumbbox">
+   <div class="crumbline"><!-- must be empty --></div>
+   <div class="braedcrumb">
+      <a href="#">Home</a>
+      <span> / </span>
+      <a href="#">Services</a>
+      <span> / </span>
+      Branding and Identity design
+   </div>
+</div>
+
+<br>
+
+<h1 class="main-title">
+   <span>Designing a <br> Better
+      <span class="mil-thin">World Today</span>
+   </span>
+</h1>
+
+<br><br>
+<br><br>
+<a href="#" class="btn btn-black1">What we do<img src="{% static 'assets/o.svg' %}"></a>
+<br><br>
+<a href="#" class="btn btn-white">More details<img src="{% static 'assets/g1b.svg' %}"></a>
+<br><br>
+<a href="#" class="btn btn-black2">EMTER YOUR EMAIL<img src="{% static 'assets/g2w.svg' %}"></a>
+<br><br>
+<a href="#" class="btn btn-orange">READ MORE<img src="{% static 'assets/b.svg' %}"></a>
+<br><br>
+<div class="btn-shape">
+   <!-- <img src="{% static 'assets/test.jpg' %}"> -->
+</div>
+<!-- <button class="btn">WHAT WE DO<img src="{% static 'assets/circle-arrow.svg' %}"></button> -->
+ 
+
 {% endblock content %}
