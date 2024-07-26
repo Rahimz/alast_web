@@ -4,11 +4,12 @@
 
 {% block content %}
  <h1>{% trans "Publications" %}</h1> 
- {% for item in '12345' %}
+ {% for pub in pubs %}
    <div>      
-      <h4>A long and very descriptive title of very scientific aticle {{ item }}</h4>
-      <p>Author 1, Author 2, Author 3</p>
-      <a href="">Abstract</a> | <a href="">PDF</a> | <a href="">HTML</a>  
+      <h4>{{ pub.title }}</h4>
+      <h5>{{ pub.subtitle }}</h5>
+      <p>{% trans "Authors" %}: {{ pub.authors }}</p>
+      <a href="">Abstract</a> | <a href="{{ pub.pdf.url }}" target="_blank">PDF</a>
       <hr>
    </div>
  {% endfor %}
