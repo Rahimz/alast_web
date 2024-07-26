@@ -13,6 +13,23 @@
         {% include "_header.html" %}                
     </header>
     <main>
+        <div class="crumbbox">
+            <div class="crumbline"><!-- must be empty --></div>
+            <div class="braedcrumb">
+               <a href="{% url 'generals:home' %}">Home</a>
+               <span> / </span>
+               {% for item, link in crumbs  %}
+               <a href="{% url link %}">{{ item }}</a>                 
+               
+               {% if not forloop.last %}
+               <span> / </span>                 
+               {% endif %}
+               
+               {% endfor %}
+               
+               {#Branding and Identity design#}
+            </div>
+        </div>
         {% block content %}
         
         {% endblock content %}
