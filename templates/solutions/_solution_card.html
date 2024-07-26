@@ -1,0 +1,17 @@
+{% load static %}
+<div>
+    <a href="{% url 'solutions:solution' solution.slug %}">
+       {% if solution.thumbnail %}
+       <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="250px" height="auto">
+       {% else %}
+       <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="250px" height="auto">        
+       {% endif %}
+    </a>
+    
+    <a href="">
+       <h4>{{ solution.title }}</h4>
+    </a>
+    <span>{{ solution.category }}</span>  
+    <p>{{ solution.description | truncatewords:5 }}</p>
+    <a href="{% url 'solutions:solution' solution.slug %}" class="btn btn-orange">READ MORE<img src="{% static 'assets/b.svg' %}"></a>
+ </div>

@@ -2,5 +2,10 @@ from django.contrib import admin
 
 from .models import Solution, SolutionCategory
 
-admin.site.register(Solution)
+# admin.site.register(Solution)
 admin.site.register(SolutionCategory)
+
+@admin.register(Solution)
+class SolutionAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'category', 'client']
+    

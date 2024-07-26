@@ -1,39 +1,23 @@
 {% extends "_base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}{{ page_title }}{% endblock title %}
 
-{% block content %}
- <h1>{% trans "Solutions" %}</h1> 
- <ul>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Products" %} </a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Furniture" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Graphic design" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Packaging" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "PSS" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Service" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "Brand" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "UCID research" %}</a></li>
-    <li><a href="{% url 'solutions:solution_details' %}">{% trans "UX research" %}</a></li>
- </ul>
- <div>
-   {% for solution in solutions %}
-     <div>
-      <a href="{% url 'solutions:solution' solution.slug %}">
-         {% if solution.thumbnail %}
-         <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="150px" height="auto">
-         {% else %}
-         <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="150px" height="auto">        
-         {% endif %}
-      </a>
-      
-      <a href="{% url 'solutions:solution' solution.slug %}">
-         <h4>{{ solution.title }}</h4>
-      </a>
-      <span>{{ solution.category }}</span>  
-      <p>{{ solution.description | truncatewords:5 }}</p>
-
-     </div>
-
+{% block content %} 
+ <h1 class="main-title">
+    <span>{% trans "Solutions" %}
+       {#<span class="mil-thin">World Today</span>#}
+    </span>
+ </h1>
+ 
+   {% for category in categories %}
+   <a href="{% url 'solutions:solution_details' %}">
+      <h1 class="main-title">
+         <span class="mil-thin">{{ category }}</span>
+      </h1>      
+   </a>
+   {% for solution in category.solutions.all %}
+   {% include "solutions/_solution_card.html" %}
    {% endfor %}
- </div>
+   {% endfor %}
+   
 {% endblock content %}

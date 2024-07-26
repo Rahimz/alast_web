@@ -1,13 +1,17 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
-from .models import Solution
+from .models import Solution, SolutionCategory
 
 def SolutionsView(request):
     solutions = Solution.objects.all()
+    # categories = SolutionCategory.objects.all()
+    categories = SolutionCategory.objects.prefetch_related('solutions')
     context = dict(
         page_title=_("Solutios"),
-        solutions=solutions
+        solutions=solutions,
+        categories=categories,
+        crumbs=[(_("Solutions"), 'solutions:solutions')]
     )
     
     return render(
@@ -21,6 +25,10 @@ def SolutionView(request, slug):
     context = dict(
         page_title=_("Solution"),
         solution=solution,
+        crumbs=[
+            (_("Solutions"), 'solutions:solutions'),
+            (solution.title, None),
+            ]
     )    
     return render(
         request,

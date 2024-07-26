@@ -19,7 +19,11 @@
                <a href="{% url 'generals:home' %}">Home</a>
                <span> / </span>
                {% for item, link in crumbs  %}
-               <a href="{% url link %}">{{ item }}</a>                 
+               {% if link %}
+               <a href="{% url link %}">{{ item }}</a>
+               {% else %}
+               {{ item }}
+               {% endif %}
                
                {% if not forloop.last %}
                <span> / </span>                 
@@ -35,7 +39,9 @@
         {% endblock content %}
     </main>
 
-    <span class="page-title">Homepage</span>
+    <span class="page-title">
+        <a href="{% url 'generals:home' %}">Homepage</a>
+    </span>
     
     <footer>
        {% include "_footer.html" %}
