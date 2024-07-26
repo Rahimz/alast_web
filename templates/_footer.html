@@ -8,7 +8,7 @@
     <nav>
         <a href="{% url 'generals:home' %}" class="{% if page_title == 'Home' %}active{% endif %}">{% trans "Home" %}</a>
         <a href="{% url 'solutions:solutions' %}" class="{% if page_title == 'Solutios' %}active{% endif %}">{% trans "Solutions" %}</a>
-        <a href="{% url 'generals:publications' %}" class="{% if page_title == 'Publications' %}active{% endif %}">{% trans "Publications" %}</a>
+        <a href="{% url 'publications:publications' %}" class="{% if page_title == 'Publications' %}active{% endif %}">{% trans "Publications" %}</a>
         <a href="{% url 'clients:clients' %}" class="{% if page_title == 'Clients' %}active{% endif %}">{% trans "Clients" %}</a>
         <a href="{% url 'generals:about_us' %}" class="{% if page_title == 'About us' %}active{% endif %}">{% trans "About us" %}</a>
         <a href="{% url 'generals:contact_us' %}" class="{% if page_title == 'Contact us' %}active{% endif %}">{% trans "Contact us" %}</a>
@@ -18,9 +18,9 @@
         <a href="{% url 'generals:home' %}">Addresses</a>
         <a href="{% url 'solutions:solutions' %}">generals</a>
         <a href="{% url 'solutions:solutions' %}">gitignore</a>
-        <a href="{% url 'generals:publications' %}">Subscribe</a>
+        <a href="{% url 'publications:publications' %}">Subscribe</a>
         <a href="{% url 'generals:home' %}">Addresses</a>
         <a href="{% url 'solutions:solutions' %}">Social medias</a>
-        <a href="{% url 'generals:publications' %}">Branches</a>
+        <a href="{% url 'publications:publications' %}">Branches</a>
     </nav>
 </div>
