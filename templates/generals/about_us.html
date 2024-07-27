@@ -3,7 +3,14 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
-<h1>{% trans "About us" %}</h1>
+
+<h1 class="main-title">
+   <span>Our Value 
+      <span class="mil-thin">and</span>
+      Vision
+   </span>
+</h1>
+
 <ul>
    <li><a href="#who_we_are">{% trans "Who we are" %}</a></li>
    <li><a href="#strategies">{% trans "Strategies" %}</a></li>
@@ -79,19 +86,29 @@
 </div>
 {% endfor %}     
 
-
-<h2 id="team">{% trans "Team memeber" %}</h2>
-<div style="display: flex;">
-   {% for member in team_members %}
-   <div style="justify-content: row; margin: 10px;">
-      <img src="{{ member.avatar.url }}" alt="" , height="auto" width="250">
-      <br>
-      {{ member.user }}
-      <br>
-      {{ member.role }}
+<section id="team">
+   <h2 class="main-title">
+      <span>team
+         <span class="mil-thin">members</span>
+      </span>
+   </h2>
+   <div class="team_box">
+      {% for member in team_members %}
+      <div class="member">
+         <img src="{{ member.avatar.url }}" alt="">
+         <div class="member_over">
+            <a href="#">{{ member.user }}</a>
+            <span>{{ member.role }}</span>
+            <div class="member_socials">
+               <a href="#">A</a>
+               <a href="#">B</a>
+               <a href="#">C</a>
+            </div>
+         </div>
+      </div>
+      {% endfor %}     
    </div>
-   {% endfor %}     
-</div>
+</section>
 
 
 <h2 id="solutions">{% trans "Solutions" %}</h2>
