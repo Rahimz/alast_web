@@ -12,37 +12,36 @@
     <header>
         {% include "_header.html" %}                
     </header>
+
+	<div class="crumbbox">
+		<div class="crumbline"><!-- must be empty --></div>
+		<div class="braedcrumb">
+			<!-- <a href="{% url 'generals:home' %}">Home</a> -->
+			<!-- <span> / </span> -->
+			{% for item, link in crumbs  %}
+				{% if link %}
+				<a href="{% url link %}">{{ item }}</a>
+				{% else %}
+				{{ item }}
+				{% endif %}
+				
+				{% if not forloop.last %}
+				<span> / </span>                 
+				{% endif %}
+			   {% endfor %}
+		   
+			   {#Branding and Identity design#}
+		</div>
+	</div>
+	
     <main>
-        <div class="crumbbox">
-            <div class="crumbline"><!-- must be empty --></div>
-            <div class="braedcrumb">
-               <a href="{% url 'generals:home' %}">Home</a>
-               <span> / </span>
-               {% for item, link in crumbs  %}
-               {% if link %}
-               <a href="{% url link %}">{{ item }}</a>
-               {% else %}
-               {{ item }}
-               {% endif %}
-               
-               {% if not forloop.last %}
-               <span> / </span>                 
-               {% endif %}
-               
-               {% endfor %}
-               
-               {#Branding and Identity design#}
-            </div>
-        </div>
         {% block content %}
         
         {% endblock content %}
     </main>
 
-    <span class="page-title">
-        <a href="{% url 'generals:home' %}">Homepage</a>
-    </span>
-    
+	<span class="page-title">{{ page_title }}</span>
+
     <footer>
        {% include "_footer.html" %}
     </footer>    

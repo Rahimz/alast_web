@@ -2,9 +2,13 @@
 @import "components/header";
 @import "components/footer";
 
+html {scroll-behavior: smooth;}
 * {box-sizing: border-box; font-family: "Outfit", sans-serif;}
-a {text-decoration: none; transition: 0.2s;}
+a {text-decoration: none; transition: 0.2s; font-family: "Outfit", sans-serif;}
+img {display: block;}
+
 body {margin: 0;}
+
 .crumbbox {
     display: flex; align-items: center;
     position: absolute; top: 180px; left: 0;
@@ -52,7 +56,18 @@ main {
         font-size: 72px;
         span.mil-thin {font-weight: 100;}
     }
+    h2.main-title {
+        font-size: 42px;
+        span.mil-thin {font-weight: 100;}
+    }
 }
+// section {background-color: #999999;}
+
+
+
+
+
+
 
 
 // btn & a
@@ -105,3 +120,5 @@ div.btn-shape {
 
 
 
+
+@import "pages/about";
