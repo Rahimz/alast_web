@@ -110,21 +110,21 @@ body {
 }
 .crumbbox .crumbline {
   height: 1px;
-  width: calc((100vw - 1160px) / 2);
-  margin-right: 30px;
+  width: calc((100vw - 1175px) / 2);
+  margin-right: 20px;
   background-color: rgb(220, 220, 220);
 }
-.crumbbox .braedcrumb {
+.crumbbox .breadcrumb {
   color: rgb(180, 180, 180);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 3px;
 }
-.crumbbox .braedcrumb a, .crumbbox .braedcrumb span {
+.crumbbox .breadcrumb a, .crumbbox .breadcrumb span {
   color: black;
 }
-.crumbbox .braedcrumb a:hover {
+.crumbbox .breadcrumb a:hover {
   color: #ff9800;
 }
 
@@ -140,9 +140,11 @@ body {
 }
 
 main {
-  margin: 105px auto 0;
+  margin: 100px auto 0;
+  background: url("../assets/alast-test.svg") no-repeat top right;
+  background-size: 500px;
   width: 1160px;
-  padding: 120px 30px;
+  padding: 20px;
 }
 main h1.main-title {
   font-size: 72px;
@@ -155,6 +157,24 @@ main h2.main-title {
 }
 main h2.main-title span.mil-thin {
   font-weight: 100;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 200px;
+  margin: 130px 0;
+}
+section h2 {
+  margin-bottom: 70px;
+  text-align: center;
+  text-transform: capitalize;
+}
+section p {
+  width: 70%;
+  color: rgb(180, 180, 180);
+  text-align: justify;
 }
 
 button.btn, a.btn {
@@ -211,46 +231,99 @@ div.btn-shape {
   background-size: cover;
   border-radius: 50px;
 }
-section#team, .team_box, .member_over {
+.award_box, .award, .team_box, .gallery, .image, .member_over {
   display: flex;
 }
 
-section#team {
+section#awards .award_box .award {
   flex-direction: column;
-  margin: 150px 0;
-  scroll-margin-top: 200px;
+  justify-content: space-between;
+  position: relative;
+  width: 250px;
+  margin-right: 80px;
 }
-section#team h2 {
-  margin-bottom: 70px;
+section#awards .award_box .award:last-child {
+  margin-right: 0;
+}
+section#awards .award_box .award img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+section#awards .award_box .award div {
   text-align: center;
-  text-transform: capitalize;
 }
-section#team .team_box {
-  justify-content: center;
+section#awards .award_box .award h4, section#awards .award_box .award h5 {
+  font-size: 14px;
+  color: rgb(70, 70, 70);
+}
+section#awards .award_box .award h5 {
+  font-weight: 500;
+}
+section#awards .award_box .award h4 {
+  font-weight: 200;
 }
 
-.team_box .member {
+section#gallery h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+section#gallery .gallery {
+  margin-bottom: 30px;
+}
+section#gallery .gallery .image {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 210px;
+  margin-right: 1px;
+}
+section#gallery .gallery .image:last-child {
+  margin-right: 0;
+}
+section#gallery .gallery .image .img {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  cursor: pointer;
+}
+section#gallery .gallery .image .img img {
+  width: 350px;
+  transition: 0.5s;
+}
+section#gallery .gallery .image h4 {
+  font-size: 12px;
+  color: rgb(70, 70, 70);
+  font-weight: 200;
+}
+section#gallery .gallery .image:hover img {
+  transform: scale(1.05);
+}
+
+section#team .team_box .member {
   position: relative;
   width: 250px;
   height: 250px;
-  margin-right: 30px;
   overflow: hidden;
+  margin-right: 30px;
 }
-.team_box .member img {
+section#team .team_box .member:last-child {
+  margin-right: 0;
+}
+section#team .team_box .member img {
   width: 102%;
   transition: 500ms;
 }
-.team_box .member:hover img {
+section#team .team_box .member:hover img {
   width: 100%;
 }
-.team_box .member:hover .member_over {
+section#team .team_box .member:hover .member_over {
   background-color: rgba(0, 0, 0, 0.8);
   padding-bottom: 50px;
 }
-.team_box .member:hover .member_over > * {
+section#team .team_box .member:hover .member_over > * {
   opacity: 1;
 }
-.team_box .member .member_over {
+section#team .team_box .member .member_over {
   flex-direction: column;
   justify-content: end;
   align-items: center;
@@ -265,11 +338,11 @@ section#team .team_box {
   transition: 0.5s;
   padding-bottom: 40px;
 }
-.team_box .member .member_over > * {
+section#team .team_box .member .member_over > * {
   opacity: 0;
   transition: 0.5s;
 }
-.team_box .member .member_over::after {
+section#team .team_box .member .member_over::after {
   content: "";
   position: absolute;
   left: 0;
@@ -280,30 +353,30 @@ section#team .team_box {
   background: #ff9800;
   transition: width 500ms ease-in-out;
 }
-.team_box .member .member_over:hover::after {
+section#team .team_box .member .member_over:hover::after {
   width: 100%;
 }
-.team_box .member .member_over a {
+section#team .team_box .member .member_over a {
   font-size: 20px;
   font-weight: 400;
   color: white;
   text-transform: capitalize;
 }
-.team_box .member .member_over span {
+section#team .team_box .member .member_over span {
   margin: 10px 0;
   font-size: 12px;
   color: rgb(180, 180, 180);
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-.team_box .member .member_over .member_socials a {
+section#team .team_box .member .member_over .member_socials a {
   color: white;
   font-size: 12px;
   margin-right: 10px;
 }
-.team_box .member .member_over .member_socials a:last-child {
+section#team .team_box .member .member_over .member_socials a:last-child {
   margin-right: 0;
 }
-.team_box .member .member_over .member_socials a:hover {
+section#team .team_box .member .member_over .member_socials a:hover {
   color: #ff9800;
 }

@@ -12,18 +12,20 @@ body {margin: 0;}
 .crumbbox {
     display: flex; align-items: center;
     position: absolute; top: 180px; left: 0;
+    // background-color: burlywood;
 
     .crumbline {
-        height: 1px; width: calc((100vw - 1160px) / 2);
-        margin-right: 30px;
+        height: 1px; width: calc((100vw - 1175px) / 2);
+        margin-right: 20px;
         background-color: $g220;
     }
-    .braedcrumb {
+    .breadcrumb {
         color: $g180;
         text-transform: uppercase;
         font-size: 12px; font-weight: 400; letter-spacing: 3px;
         a, span {color: $c_bb;}
         a:hover {color: $orng;}
+        // background-color: aquamarine;
     }
 }
 .page-title {
@@ -46,9 +48,11 @@ body {margin: 0;}
 
 main {
     // position: relative;
-    margin: 105px auto 0;
-    width: 1160px;
-    padding: 120px 30px;
+    margin: 100px auto 0;
+    background: url("../assets/alast-test.svg") no-repeat top right;
+    background-size: 500px;
+    width: $ww;
+    padding: 20px;
     // height: 500px;
     // background-color: rgba(95, 158, 160, 0.171);
 
@@ -61,7 +65,16 @@ main {
         span.mil-thin {font-weight: 100;}
     }
 }
-// section {background-color: #999999;}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-margin-top: 200px;
+    margin: 130px 0;
+    h2 {margin-bottom: 70px; text-align: center; text-transform: capitalize;}
+    p {width: 70%; color: $g180; text-align: justify;}
+    // background-color: #999999;
+}
 
 
 

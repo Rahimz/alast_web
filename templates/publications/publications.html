@@ -3,14 +3,20 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
- <h1>{% trans "Publications" %}</h1> 
- {% for pub in pubs %}
-   <div>      
-      <h4>{{ pub.title }}</h4>
-      <h5>{{ pub.subtitle }}</h5>
-      <p>{% trans "Authors" %}: {{ pub.authors }}</p>
-      <a href="">Abstract</a> | <a href="{{ pub.pdf.url }}" target="_blank">PDF</a>
-      <hr>
-   </div>
- {% endfor %}
+<main>
+
+	<section>
+		<h1>{% trans "Publications" %}</h1> 
+		{% for pub in pubs %}
+		<div>      
+			<h4>{{ pub.title }}</h4>
+			<h5>{{ pub.subtitle }}</h5>
+			<p>{% trans "Authors" %}: {{ pub.authors }}</p>
+			<a href="">Abstract</a> | <a href="{{ pub.pdf.url }}" target="_blank">PDF</a>
+			<hr>
+		</div>
+		{% endfor %}
+	</section>
+
+</main>
 {% endblock content %}

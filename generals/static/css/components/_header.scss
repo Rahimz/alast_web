@@ -6,7 +6,8 @@ header {
     width: 100vw;
     padding: 20px 0;
     z-index: 100;
-    background-color: $c_ww;
+    background-color: rgba($color: #FFFFFF, $alpha: 1);
+    // background-color: rgba($color: #fc1818, $alpha: 0.3);
     // border-bottom: 1px dotted gray;
 
     div {
