@@ -6,25 +6,25 @@
 <main class="main_solutions">
 
    <h1 class="main-title">
-      <span>{% trans "Solutions" %}<br>
-         <span class="mil-thin"></span>
-      </span>
+      <span>
+         <span class="mil-thin">Check out<br>our</span>
+      </span>{% trans "Solutions" %}
    </h1>
 
    
    {% for category in categories %}
 
       <section id="solutions">
-         <div class="solutions_top">
+         <!-- <div class="solutions_top"> -->
             <h2 class="main-title">
                <span>{{ category }}
                   <span class="mil-thin"></span>
                </span>
             </h2>
-            <a href="" class="btn btn-white no-rm">view all solutions<img src="{% static 'assets/g1b.svg' %}"></a>
-         </div>
+            <!-- <a href="" class="btn btn-white no-rm">view all solutions<img src="{% static 'assets/g1b.svg' %}"></a> -->
+         <!-- </div> -->
 
-         <br><br><br>
+         <!-- <br><br><br> -->
          <div class="solution_box">
             {% for solution in category.solutions.all %}
                {% include "solutions/_solution_card.html" %}
