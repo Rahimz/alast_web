@@ -16,21 +16,22 @@
 	<div class="crumbbox">
 		<div class="crumbline"><!-- must be empty --></div>
 		<div class="breadcrumb">
-			<!-- <a href="{% url 'generals:home' %}">Home</a> -->
-			<!-- <span> / </span> -->
+			<a href="{% url 'generals:home' %}">Home</a>
+			
 			{% for item, link in crumbs  %}
+				<span> / </span>
 				{% if link %}
-				<a href="{% url link %}">{{ item }}</a>
+					<a href="{% url link %}">{{ item }}</a>
 				{% else %}
-				{{ item }}
+					{{ item }}
 				{% endif %}
 				
 				{% if not forloop.last %}
-				<span> / </span>                 
+					<span> / </span>                 
 				{% endif %}
-			   {% endfor %}
+			{% endfor %}
 		   
-			   {#Branding and Identity design#}
+			{#Branding and Identity design#}
 		</div>
 	</div>
 	

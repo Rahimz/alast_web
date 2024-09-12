@@ -144,27 +144,21 @@ main {
   background: url("../assets/alast-test.svg") no-repeat top right;
   background-size: 500px;
   width: 1160px;
-  padding: 20px;
+  padding: 130px 20px 0;
 }
-main h1.main-title {
+main > h1.main-title {
   font-size: 72px;
+  margin: 0 0 50px;
 }
-main h1.main-title span.mil-thin {
-  font-weight: 100;
-}
-main h2.main-title {
-  font-size: 42px;
-}
-main h2.main-title span.mil-thin {
+main > h1.main-title span.mil-thin {
   font-weight: 100;
 }
 
 section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   scroll-margin-top: 200px;
-  margin: 130px 0;
+  margin: 0 0 150px;
 }
 section h2 {
   margin-bottom: 70px;
@@ -175,6 +169,12 @@ section p {
   width: 70%;
   color: rgb(180, 180, 180);
   text-align: justify;
+}
+section > h2.main-title {
+  font-size: 52px;
+}
+section > h2.main-title span.mil-thin {
+  font-weight: 100;
 }
 
 button.btn, a.btn {
@@ -204,6 +204,10 @@ button.btn:hover img, a.btn:hover img {
   transform: scale(1.15);
 }
 
+a.no-rm {
+  padding: 0 !important;
+}
+
 a.btn-orange {
   background-color: #ff9800;
   color: black;
@@ -231,14 +235,20 @@ div.btn-shape {
   background-size: cover;
   border-radius: 50px;
 }
-.award_box, .award, .team_box, .gallery, .image, .member_over {
+main.main_about section {
+  align-items: center;
+}
+
+.award_box, .award,
+.team_box, .member_over,
+.gallery, .gal_image,
+.solution_box, .sol_top {
   display: flex;
 }
 
 section#awards .award_box .award {
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   width: 250px;
   margin-right: 80px;
 }
@@ -247,7 +257,7 @@ section#awards .award_box .award:last-child {
 }
 section#awards .award_box .award img {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 section#awards .award_box .award div {
   text-align: center;
@@ -257,7 +267,7 @@ section#awards .award_box .award h4, section#awards .award_box .award h5 {
   color: rgb(70, 70, 70);
 }
 section#awards .award_box .award h5 {
-  font-weight: 500;
+  font-weight: 700;
 }
 section#awards .award_box .award h4 {
   font-weight: 200;
@@ -270,32 +280,32 @@ section#gallery h3 {
 section#gallery .gallery {
   margin-bottom: 30px;
 }
-section#gallery .gallery .image {
+section#gallery .gallery .gal_image {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 210px;
   margin-right: 1px;
 }
-section#gallery .gallery .image:last-child {
+section#gallery .gallery .gal_image:last-child {
   margin-right: 0;
 }
-section#gallery .gallery .image .img {
+section#gallery .gallery .gal_image .img {
   width: 100%;
   height: 190px;
   overflow: hidden;
   cursor: pointer;
 }
-section#gallery .gallery .image .img img {
+section#gallery .gallery .gal_image .img img {
   width: 350px;
   transition: 0.5s;
 }
-section#gallery .gallery .image h4 {
+section#gallery .gallery .gal_image h4 {
   font-size: 12px;
   color: rgb(70, 70, 70);
   font-weight: 200;
 }
-section#gallery .gallery .image:hover img {
+section#gallery .gallery .gal_image:hover img {
   transform: scale(1.05);
 }
 
@@ -379,4 +389,56 @@ section#team .team_box .member .member_over .member_socials a:last-child {
 }
 section#team .team_box .member .member_over .member_socials a:hover {
   color: #ff9800;
+}
+
+section#solutions .solution_box {
+  flex-wrap: wrap;
+}
+section#solutions .solution_box .solution {
+  width: 47%;
+  margin: 0 6% 80px 0;
+}
+section#solutions .solution_box .solution:nth-child(2n) {
+  margin: 0 0 80px 0;
+}
+section#solutions .solution_box .solution .sol_img {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+section#solutions .solution_box .solution .sol_img img {
+  width: 100%;
+  transition: 500ms;
+}
+section#solutions .solution_box .solution .sol_img:hover img {
+  transform: scale(1.05);
+}
+section#solutions .solution_box .solution .sol_top {
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+section#solutions .solution_box .solution .sol_top span {
+  color: #ff9800;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+section#solutions .solution_box .solution .sol_top a {
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+section#solutions .solution_box .solution .sol_top a:hover {
+  color: rgb(70, 70, 70);
+}
+section#solutions .solution_box .solution p {
+  margin: 30px 0;
+  width: 100%;
+}
+
+section#solutions .solutions_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: yellowgreen;
 }

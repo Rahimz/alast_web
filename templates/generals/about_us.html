@@ -1,16 +1,16 @@
 {% extends "_base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
-<main>
+<main class="main_about">
 
    <!-- <h1 class="main-title">
-      <span>Our Value 
-         <span class="mil-thin">and</span>
-         Vision
+      <span>About
+         <span class="mil-thin">Us</span>
       </span>
    </h1> -->
+
 
    <!-- <ul>
       <li><a href="#who_we_are">{% trans "Who we are" %}</a></li>
@@ -102,7 +102,7 @@
       <h3>{{ gallery }}</h3>
       <div class="gallery">
          {% for image in gallery.images.all %}
-         <div class="image">
+         <div class="gal_image">
             <div class="img"><img src="{{ image.file.url }}"></div>
             <h4>{{ image.title }}</h4>
          </div>
@@ -110,26 +110,6 @@
       </div>
       {% endfor %}    
    </section>
-
-
-
-   <!-- <h2 id="gallery">{% trans "Gallery" %}</h2>
-   {% for gallery in galleries %}
-   <h3>{{ gallery }}</h3>
-   <div style="display: flex;">
-      {% for image in gallery.images.all %}
-      <div style="justify-content: row; margin: 10px;">
-         <img src="{{ image.file.url }}" alt="" , height="auto" width="250">
-         <br>
-         {% if image.title %}
-         {{ image.title }}        
-         {% endif %}
-      </div>
-         {% endfor %}
-   </div>
-   {% endfor %}      -->
-
-
 
 
    <section id="team">
@@ -157,12 +137,20 @@
    </section>
 
 
-   <h2 id="solutions">{% trans "Solutions" %}</h2>
-   <div style="display: flex;">
-      {% for solution in solutions %}
-      {% include "solutions/_solution_card.html" %}
-      {% endfor %}   
-   </div>
+   <section id="solutions">
+      <h2 class="main-title">
+         <span>
+            <span class="mil-thin">Newest</span>
+         </span>Solutions
+      </h2>
+      <!-- <a href="" class="btn btn-white no-rm">view all solutions<img src="{% static 'assets/g1b.svg' %}"></a> -->
+      <!-- <br><br><br> -->
+      <div class="solution_box">
+         {% for solution in solutions|slice:":2" %}
+            {% include "solutions/_solution_card.html" %}
+         {% endfor %}     
+      </div>         
+   </section>
 
 </main>
 {% endblock content %}

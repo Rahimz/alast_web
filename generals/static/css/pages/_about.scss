@@ -1,23 +1,26 @@
-.award_box, .award, .team_box, .gallery, .image, .member_over {display: flex;}
+main.main_about section {align-items: center;}
+
+.award_box, .award, 
+.team_box, .member_over,
+.gallery, .gal_image, 
+.solution_box, .sol_top {display: flex;}
+
 
 section#awards {
     .award_box {
-        // justify-content: center;
         // background-color: aqua;
         
         .award {
             flex-direction: column;
             justify-content: space-between;
-            // background-color: aqua;
-            position: relative;
             width: 250px;
             margin-right: 80px;
             &:last-child {margin-right: 0;}
     
-            img {width: 100%; margin-bottom: 10px;}
+            img {width: 100%; margin-bottom: 30px;}
             div {text-align: center;}
             h4, h5 {font-size: 14px; color: $g70;}
-            h5 {font-weight: 500;}
+            h5 {font-weight: 700;}
             h4 {font-weight: 200;}
         }
     }
@@ -29,7 +32,7 @@ section#gallery {
         // background-color: bisque;
         margin-bottom: 30px;
         
-        .image {
+        .gal_image {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
@@ -51,7 +54,6 @@ section#gallery {
 }
 
 section#team {
-    
     .team_box {
         // justify-content: center;
         // background-color: aqua;
@@ -111,6 +113,46 @@ section#team {
                     a:hover {color: $orng;}
                 }
             }
+        }
+    }
+}
+
+section#solutions {
+    // background-color: aqua;
+    .solution_box {
+        flex-wrap: wrap;
+        
+        .solution {
+            width: 47%;
+            margin: 0 6% 80px 0;
+            &:nth-child(2n) {margin: 0 0 80px 0;;}
+            // background-color: bisque;
+
+
+            .sol_img {
+                width: 100%;
+                // height: 500px;
+                overflow: hidden;
+                margin-bottom: 50px;
+                img {width: 100%; transition: 500ms;}
+                &:hover img {transform: scale(1.05);}
+            }
+
+            .sol_top {
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                align-items: center;
+                span {
+                    color: $orng;
+                    font-size: 12px;
+                    text-transform:uppercase;
+                }
+                a {color: $c_bb; font-size: 28px; font-weight: 700;}
+                a:hover {color: $g70;}
+                // text-transform: capitalize;
+            }
+
+            p {margin: 30px 0; width: 100%;}
         }
     }
 }

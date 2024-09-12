@@ -3,10 +3,16 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
-<main>
+<main class="main_clients">
+
+   <h1 class="main-title">
+      <span>
+         <span class="mil-thin">Our</span>
+         {% trans "Clients" %}
+      </span>
+   </h1>
 
    <section>
-      <h1>{% trans "Clients" %}</h1> 
       <div style="display: flex;">
          {% for client in clients %}     
          <div style="justify-content: row; margin: 30px;">

@@ -52,29 +52,34 @@ main {
     background: url("../assets/alast-test.svg") no-repeat top right;
     background-size: 500px;
     width: $ww;
-    padding: 20px;
+    padding: 130px 20px 0;
     // height: 500px;
     // background-color: rgba(95, 158, 160, 0.171);
 
-    h1.main-title {
+    & > h1.main-title {
         font-size: 72px;
-        span.mil-thin {font-weight: 100;}
-    }
-    h2.main-title {
-        font-size: 42px;
+        margin: 0 0 50px;
+        // background-color: blueviolet;
         span.mil-thin {font-weight: 100;}
     }
 }
 section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; 
     scroll-margin-top: 200px;
-    margin: 130px 0;
+    margin: 0 0 150px;
     h2 {margin-bottom: 70px; text-align: center; text-transform: capitalize;}
     p {width: 70%; color: $g180; text-align: justify;}
-    // background-color: #999999;
+    // background-color: #d89595;
+
+    & > h2.main-title {
+        font-size: 52px;
+        // background-color: rgb(78, 156, 71);
+        span.mil-thin {font-weight: 100;}
+    }
 }
+
+
 
 
 
@@ -106,6 +111,8 @@ button.btn, a.btn {
     &:hover {transform: scale(1.01);}
     &:hover img {transform: scale(1.15);}
 }
+a.no-rm {padding: 0 !important;}
+
 a.btn-orange {background-color: $orng; color: $c_bb;}
 a.btn-white {background-color: $c_ww; color: $c_bb;}
 a.btn-black1 {background-color: $c_bb; color: $c_ww;}
@@ -135,3 +142,4 @@ div.btn-shape {
 
 
 @import "pages/about";
+@import "pages/solutions";
