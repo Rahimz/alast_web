@@ -3,10 +3,23 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
- <h1>{% trans "Contact us" %}</h1> 
- <ul>
-    <li>{% trans "Email" %} </li>
-    <li>{% trans "Phone" %}</li>
-    <li>{% trans "Addresses" %}</li>    
- </ul>
+
+<main class="main_contact">
+
+   <h1 class="main-title">
+      <span>{% trans "Contact" %}
+         <span class="mil-thin">Us</span>
+      </span>
+   </h1>
+
+   <section>
+      <ul>
+         <li>{% trans "Email" %} </li>
+         <li>{% trans "Phone" %}</li>
+         <li>{% trans "Addresses" %}</li>    
+      </ul>
+   </section>
+   
+</main>
+
 {% endblock content %}

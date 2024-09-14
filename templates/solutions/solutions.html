@@ -2,26 +2,40 @@
 {% load i18n static %}
 {% block title %}{{ page_title }}{% endblock title %}
 
-{% block content %} 
- <h1 class="main-title">
-    <span>{% trans "Solutions" %}
-       <span class="mil-thin">for a better world</span>
-    </span>
- </h1>
- 
-   {% for category in categories %}
-      <a href="{% url 'solutions:solution_details' %}">
-         <h1 class="main-title">
-            <span class="mil-thin">{{ category }}</span>
-         </h1>      
-      </a>
-      
-      <div style="display: flex;">      
-         {% for solution in category.solutions.all %}
-         {% include "solutions/_solution_card.html" %}
-         {% endfor %}
-      </div>    
+{% block content %}
+<main class="main_solutions">
 
-   {% endfor %}
+   <h1 class="main-title">
+      <span>Check
+         <span class="mil-thin">out<br>our</span>
+      </span>{% trans "Solutions" %}
+   </h1>
+
+   <a href="#solutions" class="btn btn-white no-rm">SOLUTIONS<img src="{% static 'assets/g-to-bot.svg' %}"></a>
+
+	<br><br><br><br><br><br><br><br><br>
    
+   {% for category in categories %}
+
+      <section id="solutions">
+         <!-- <div class="solutions_top"> -->
+            <h2 class="main-title">
+               <span>{{ category }}
+                  <span class="mil-thin"></span>
+               </span>
+            </h2>
+            <!-- <a href="" class="btn btn-white no-rm">view all solutions<img src="{% static 'assets/g1b.svg' %}"></a> -->
+         <!-- </div> -->
+
+         <!-- <br><br><br> -->
+         <div class="solution_box">
+            {% for solution in category.solutions.all %}
+               {% include "solutions/_solution_card.html" %}
+            {% endfor %}     
+         </div>         
+      </section>
+            
+   {% endfor %}
+	
+</main>
 {% endblock content %}

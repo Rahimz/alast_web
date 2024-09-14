@@ -1,16 +1,37 @@
 {% extends "_base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
- <h1>{% trans "Publications" %}</h1> 
- {% for pub in pubs %}
-   <div>      
-      <h4>{{ pub.title }}</h4>
-      <h5>{{ pub.subtitle }}</h5>
-      <p>{% trans "Authors" %}: {{ pub.authors }}</p>
-      <a href="">Abstract</a> | <a href="{{ pub.pdf.url }}" target="_blank">PDF</a>
-      <hr>
-   </div>
- {% endfor %}
+<main class="main_publications">
+
+	<h1 class="main-title">Exploring
+	   <span>
+		  <span class="mil-thin">the World<br>through</span>
+	   </span>our Blog
+	</h1>
+	<a href="#solutions" class="btn btn-white no-rm">PUBLICATIONS<img src="{% static 'assets/g-to-bot.svg' %}"></a>
+
+	<br><br><br><br><br><br><br><br><br>
+
+	<section id="solutions">
+		<div class="solution_box">
+			{% for pub in pubs %}
+			  {% include "publications/_publication_card.html" %}
+			{% endfor %}   
+		</div>         
+	</section>
+</main>
+
+<!-- <div class="off_publication">
+	<main class="main_publications">
+		<section id="publications">
+			<div class="solution_box">
+				{% for pub in pubs %}
+				  {% include "publications/_publication_card.html" %}
+				{% endfor %}   
+			</div>         
+		</section>
+	</main>
+</div> -->
 {% endblock content %}

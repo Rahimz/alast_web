@@ -15,31 +15,44 @@
 
 	<div class="crumbbox">
 		<div class="crumbline"><!-- must be empty --></div>
-		<div class="braedcrumb">
-			<!-- <a href="{% url 'generals:home' %}">Home</a> -->
-			<!-- <span> / </span> -->
+		<div class="breadcrumb">
+			<a href="{% url 'generals:home' %}">Home</a>
+			
 			{% for item, link in crumbs  %}
+				<span> / </span>
 				{% if link %}
-				<a href="{% url link %}">{{ item }}</a>
+					<a href="{% url link %}">{{ item }}</a>
 				{% else %}
-				{{ item }}
+					{{ item }}
 				{% endif %}
 				
 				{% if not forloop.last %}
-				<span> / </span>                 
+					<span> / </span>                 
 				{% endif %}
-			   {% endfor %}
+			{% endfor %}
 		   
-			   {#Branding and Identity design#}
+			{#Branding and Identity design#}
 		</div>
 	</div>
 	
-    <main>
-        {% block content %}
-        
-        {% endblock content %}
-    </main>
+	<!-- <svg width="200" height="180" xmlns="http://www.w3.org/2000/svg">
+		<rect x="30" y="30" height="110" width="110" style="stroke:green;fill:red">
+		<animateTransform
+			attributeName="transform"
+			begin="0s"
+			dur="10s"
+			type="rotate"
+			from="0 85 85"
+			to="360 85 85"
+			repeatCount="indefinite" />
+		</rect>
+		Sorry, your browser does not support inline SVG.
+	</svg> -->
 
+    {% block content %}
+        
+    {% endblock content %}
+    
 	<span class="page-title">{{ page_title }}</span>
 
     <footer>
