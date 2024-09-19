@@ -219,22 +219,22 @@ a.no-rm {
   padding: 0 !important;
 }
 
-a.btn-orange {
+.btn-orange {
   background-color: #ff9800;
   color: black;
 }
 
-a.btn-white {
+.btn-white {
   background-color: white;
   color: black;
 }
 
-a.btn-black1 {
+.btn-black1 {
   background-color: black;
   color: white;
 }
 
-a.btn-black2 {
+.btn-black2 {
   background-color: black;
   color: #999999;
 }
@@ -459,13 +459,59 @@ section#contacts {
 }
 section#contacts div {
   width: 48%;
-  background-color: #f2f2f2;
+  background-color: #f9f9f9;
   margin-right: 4%;
-  padding: 30px;
-  border-radius: 30px;
+  padding: 80px 50px;
+}
+section#contacts div h3 {
+  border-bottom: 1px solid rgb(180, 180, 180);
+  display: inline-block;
+  padding-bottom: 10px;
 }
 section#contacts div:nth-child(2n) {
   margin-right: 0;
+}
+
+#sendmessage form {
+  width: 100%;
+}
+#sendmessage form .inputs, #sendmessage form .submitbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#sendmessage form .inputs {
+  margin-bottom: 25px;
+}
+#sendmessage form .inputs input {
+  width: 48.5%;
+  padding: 25px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
+#sendmessage form textarea {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 25px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
+#sendmessage form textarea::-moz-placeholder, #sendmessage form input::-moz-placeholder {
+  color: rgb(180, 180, 180);
+  text-transform: uppercase;
+}
+#sendmessage form textarea::placeholder, #sendmessage form input::placeholder {
+  color: rgb(180, 180, 180);
+  text-transform: uppercase;
+}
+#sendmessage form .submitbox span {
+  color: rgb(180, 180, 180);
+}
+#sendmessage form .submitbox span::before {
+  content: "* ";
+  color: #ff9800;
 }
 
 section#solutions .solutions_top, section#publications .solutions_top {

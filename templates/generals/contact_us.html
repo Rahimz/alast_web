@@ -15,14 +15,14 @@
 
    <section id="contacts">
       <div>
-         <h3>Tehran</h3>
+         <h3>Tehran Office</h3><br>
          <p><span>Tel: </span>+98-21-67-76-6676</p>
          <p><span>Fax: </span>+98-21-67-76-6676</p>
          <p><span>Email: </span>alast@alastdesign.com</p>
          <p><span>Address: </span>No. 6, Felan Complex, Yazd, Iran</p>
       </div>
       <div>
-         <h3>Toronto</h3>
+         <h3>Toronto Office</h3><br>
          <p><span>Tel: </span>+98-21-67-76-6676</p>
          <p><span>Fax: </span>+98-21-67-76-6676</p>
          <p><span>Email: </span>alast@alastdesign.com</p>
@@ -43,13 +43,19 @@
          </span>
       </h2>
 
-      form
-
-      <ul>
-         <li>{% trans "Email" %} </li>
-         <li>{% trans "Phone" %}</li>
-         <li>{% trans "Addresses" %}</li>    
-      </ul>
+      <form method="" action="">
+         <div class="inputs">
+            <input name="name" id="name" type="text" placeholder="what's your name">
+            <input name="email" id="email" type="email" placeholder="your email">
+         </div>
+      
+         <textarea type="text" placeholder="tell us about our project" rows="15"></textarea>
+         
+         <div class="submitbox">
+            <span>We promise not to disclose your personal information to third parties.</span>
+            <button type="submit" class="btn btn-orange">send message<img src="{% static 'assets/b.svg' %}"></button>
+         </div>
+      </form>
    </section>
 </main>
 {% endblock content %}
