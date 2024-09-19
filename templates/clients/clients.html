@@ -12,7 +12,9 @@
       </span>
    </h1>
 
-   <section>
+   {% include "../components/btns/wg-down-inside.html" with title='clients' link='clients' %}
+
+   <section id="clients">
       <div style="display: flex;">
          {% for client in clients %}     
          <div style="justify-content: row; margin: 30px;">

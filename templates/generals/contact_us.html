@@ -1,25 +1,55 @@
 {% extends "_base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
-
 <main class="main_contact">
 
    <h1 class="main-title">
-      <span>{% trans "Contact" %}
-         <span class="mil-thin">Us</span>
+      <span>Get in touch!
+         <span class="mil-thin"></span>
       </span>
    </h1>
 
-   <section>
+   {% include "../components/btns/wg-down-inside.html" with title='send message' link='sendmessage'%}
+
+   <section id="contacts">
+      <div>
+         <h3>Tehran</h3>
+         <p><span>Tel: </span>+98-21-67-76-6676</p>
+         <p><span>Fax: </span>+98-21-67-76-6676</p>
+         <p><span>Email: </span>alast@alastdesign.com</p>
+         <p><span>Address: </span>No. 6, Felan Complex, Yazd, Iran</p>
+      </div>
+      <div>
+         <h3>Toronto</h3>
+         <p><span>Tel: </span>+98-21-67-76-6676</p>
+         <p><span>Fax: </span>+98-21-67-76-6676</p>
+         <p><span>Email: </span>alast@alastdesign.com</p>
+         <p><span>Address: </span>No. 6, Felan Complex, Yazd, Iran</p>
+      </div>
+   </section>
+</main>
+
+<div class="off_publication" style="-webkit-filter: grayscale(100%); filter: grayscale(100%);">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4915.828292852938!2d4.22783!3d51.97199!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b2e1266e2fe5%3A0x6da00811c8cfcfc7!2sLeehove%2040%2C%202678%20MC%20De%20Lier%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1726337153525!5m2!1sen!2sus" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<main class="main_contact">
+   <section id="sendmessage">
+      <h2 class="main-title">
+         <span>Let's
+            <span class="mil-thin">Talk</span>
+         </span>
+      </h2>
+
+      form
+
       <ul>
          <li>{% trans "Email" %} </li>
          <li>{% trans "Phone" %}</li>
          <li>{% trans "Addresses" %}</li>    
       </ul>
    </section>
-   
 </main>
-
 {% endblock content %}
