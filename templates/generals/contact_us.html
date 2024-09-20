@@ -43,18 +43,31 @@
          </span>
       </h2>
 
-      <form method="" action="">
-         <div class="inputs">
-            <input name="name" id="name" type="text" placeholder="what's your name">
-            <input name="email" id="email" type="email" placeholder="your email">
-         </div>
-      
-         <textarea type="text" placeholder="tell us about our project" rows="15"></textarea>
+      <form method="post" action="">
+         {% csrf_token %}
          
+         
+         <div class="inputs">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {{ form.email.label_tag }}
+            {{ form.email }}
+         </div>
+         {{ form.message.label_tag }}
+         {{ form.message }}
+
          <div class="submitbox">
             <span>We promise not to disclose your personal information to third parties.</span>
             <button type="submit" class="btn btn-orange">send message<img src="{% static 'assets/b.svg' %}"></button>
          </div>
+           
+         {% comment %}
+         <div class="inputs">
+            <input name="name" id="name" type="text" placeholder="what's your name">
+            <input name="email" id="email" type="email" placeholder="your email">
+         </div>         
+         <textarea type="text" placeholder="tell us about our project" rows="15"></textarea>
+         {% endcomment %}
       </form>
    </section>
 </main>
