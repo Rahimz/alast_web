@@ -12,23 +12,15 @@
       </span>
    </h1>
 
-   <section>
-      <div style="display: flex;">
-         {% for client in clients %}     
-         <div style="justify-content: row; margin: 30px;">
-            <h2>{{ client }}</h2>
-            <img src="{{ client.logo.url }}" alt="" width="auto" height="150px">
-            <ul>
-               {% for solution in client.solutions.all %}
-               <li>  
-                  <a href="{% url 'solutions:solution' solution.slug %}">{{ solution }}</a>
-               </li>
-               {% endfor %}
-            </ul>
-         </div>
-         {% endfor %}
-      </div>
-   </section>
+   {% include "../components/btns/wg-down-inside.html" with title='clients' link='clients' %}
+
+   <section id="clients"></section>
+		<div class="solution_box">
+			{% for client in clients %}
+			  {% include "clients/_client_card.html" %}
+			{% endfor %}   
+		</div>         
+	</section>
    
 </main>
 {% endblock content %}

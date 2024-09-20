@@ -11,13 +11,11 @@
       </span>{% trans "Solutions" %}
    </h1>
 
-   <a href="#solutions" class="btn btn-white no-rm">SOLUTIONS<img src="{% static 'assets/g-to-bot.svg' %}"></a>
-
-	<br><br><br><br><br><br><br><br><br>
+   {% include "../components/btns/wg-down-inside.html" with title='solutions' link='solutions' %}
    
    {% for category in categories %}
 
-      <section id="solutions">
+      <section id="solutions" class="solutions">
          <!-- <div class="solutions_top"> -->
             <h2 class="main-title">
                <span>{{ category }}

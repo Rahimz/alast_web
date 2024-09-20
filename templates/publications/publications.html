@@ -10,11 +10,10 @@
 		  <span class="mil-thin">the World<br>through</span>
 	   </span>our Blog
 	</h1>
-	<a href="#solutions" class="btn btn-white no-rm">PUBLICATIONS<img src="{% static 'assets/g-to-bot.svg' %}"></a>
+	
+	{% include "../components/btns/wg-down-inside.html" with title='publications' link='publications' %}
 
-	<br><br><br><br><br><br><br><br><br>
-
-	<section id="solutions">
+	<section id="publications">
 		<div class="solution_box">
 			{% for pub in pubs %}
 			  {% include "publications/_publication_card.html" %}
@@ -22,16 +21,4 @@
 		</div>         
 	</section>
 </main>
-
-<!-- <div class="off_publication">
-	<main class="main_publications">
-		<section id="publications">
-			<div class="solution_box">
-				{% for pub in pubs %}
-				  {% include "publications/_publication_card.html" %}
-				{% endfor %}   
-			</div>         
-		</section>
-	</main>
-</div> -->
 {% endblock content %}

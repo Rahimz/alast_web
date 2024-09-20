@@ -82,11 +82,11 @@ section {
 
     &.test {align-items: start;}
 }
-// .off_publication {
-//     width: 100%;
-//     background-color: #f2f2f2;
-//     & > main {margin: 0 auto; padding: 100px 20px;}
-// }
+.off_publication {
+    width: 100%;
+    background-color: #f2f2f2;
+    // & > main {margin: 0 auto; padding: 100px 20px;}
+}
 
 
 
@@ -121,10 +121,10 @@ button.btn, a.btn {
 }
 a.no-rm {padding: 0 !important;}
 
-a.btn-orange {background-color: $orng; color: $c_bb;}
-a.btn-white {background-color: $c_ww; color: $c_bb;}
-a.btn-black1 {background-color: $c_bb; color: $c_ww;}
-a.btn-black2 {background-color: $c_bb; color: #999999;}
+.btn-orange {background-color: $orng; color: $c_bb;}
+.btn-white {background-color: $c_ww; color: $c_bb;}
+.btn-black1 {background-color: $c_bb; color: $c_ww;}
+.btn-black2 {background-color: $c_bb; color: #999999;}
 
 div.btn-shape {
     width: 240px;
@@ -150,4 +150,5 @@ div.btn-shape {
 
 
 @import "pages/about";
+@import "pages/contact";
 @import "pages/solutions";

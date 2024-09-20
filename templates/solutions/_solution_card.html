@@ -14,7 +14,7 @@
 	<div>
 		<div class="sol_top">
 			<span>{{ solution.category }}</span>
-			<a href="">
+			<a href="{% url 'solutions:solution' solution.slug %}">
 				<h4>{{ solution.title }}</h4>
 			</a>
 		</div>  

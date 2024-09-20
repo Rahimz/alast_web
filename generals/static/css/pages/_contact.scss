@@ -1,0 +1,45 @@
+#contacts, #sendmessage {align-items: center;}
+
+section#contacts {
+    display: flex;
+    flex-direction: row;
+    // background-color: aquamarine;
+
+    div {
+        width: 48%;
+        background-color: #f9f9f9;
+        margin-right: 4%;
+        padding: 80px 50px;
+        // border-radius: 30px;
+        h3 {border-bottom: 1px solid $g180; display: inline-block; padding-bottom: 10px;}
+        &:nth-child(2n) {margin-right: 0;}
+    }
+}
+
+#sendmessage {
+    form {
+        width: 100%;
+        // background-color: bisque;
+        .inputs, .submitbox {display: flex; justify-content: space-between; align-items: center;}
+        .inputs {
+            margin-bottom: 25px;
+            input {
+                width: 48.5%;
+                padding: 25px;
+                outline: none; border: none; border-bottom: 1px solid $g180;
+            }
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 25px;
+            outline: none; border: none; border-bottom: 1px solid $g180;
+        }
+        textarea::placeholder, input::placeholder {color: $g180; text-transform: uppercase;}
+        .submitbox {
+            // background-color: aquamarine;
+            span {color: $g180;}
+            span::before {content: "* "; color: $orng;}
+        }
+    }
+}
