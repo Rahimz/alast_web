@@ -32,6 +32,37 @@ class TeamMember(TimeStampedModel):
         _("Rank"),
         default=1
     )
+    linkedin = models.URLField(
+        _("Linkedin"),
+        null=True,
+        blank=True
+    )
+    instagram = models.URLField(
+        _("Instagram"),
+        null=True,
+        blank=True
+    )
+    behance = models.URLField(
+        _("Behance"),
+        null=True,
+        blank=True
+    )
+    dribbble = models.URLField(
+        _("Dribbble"),
+        null=True,
+        blank=True
+    )
+    tiwtter = models.URLField(
+        _("Tiwtter"),
+        null=True,
+        blank=True
+    )
+    Link = models.URLField(
+        _("Link"),
+        null=True,
+        blank=True
+    )
+
 
     def __str__(self):
         return self.user.username

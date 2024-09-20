@@ -1,3 +1,5 @@
+{% load static %}
+
 <h2 class="main-title">
     <span>team
        <span class="mil-thin">members</span>
@@ -11,9 +13,32 @@
           <a href="#">{{ member.user }}</a>
           <span>{{ member.role }}</span>
           <div class="member_socials">
-             <a href="#">A</a>
-             <a href="#">B</a>
-             <a href="#">C</a>
+            {% if member.instagram %}
+            <a href="{{ member.instagram }}">
+                <img src="{% static 'assets/logos/instagram.png' %}" alt="instagram logo" height="16px" width="auto"></a>              
+            {% endif %}
+            {% if member.linkedin %}
+            <a href="{{ member.linkedin }}">
+                <img src="{% static 'assets/logos/linkedin.png' %}" alt="linkedin logo" height="16px" width="auto"></a>              
+            {% endif %}
+            {% if member.behance %}
+            <a href="{{ member.behance }}">
+                <img src="{% static 'assets/logos/behance.png' %}" alt="behance logo" height="16px" width="auto"></a>              
+            {% endif %}
+            {% if member.dribbble %}
+            <a href="{{ member.dribbble }}">
+                <img src="{% static 'assets/logos/dribbble.png' %}" alt="dribbble logo" height="16px" width="auto"></a>              
+            {% endif %}
+            {% if member.twitter %}
+            <a href="{{ member.twitter }}">
+                <img src="{% static 'assets/logos/twitter.png' %}" alt="twitter logo" height="16px" width="auto"></a>              
+            {% endif %}
+      
+            {% if member.link %}
+            <a href="{{ member.link }}">
+                <img src="{% static 'assets/logos/link.png' %}" alt="link logo" height="16px" width="auto"></a>              
+            {% endif %}
+      
           </div>
        </div>
     </div>
