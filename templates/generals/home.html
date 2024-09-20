@@ -14,7 +14,23 @@
          <span class="mil-thin">World Today</span>
       </span>
    </h1>
+   <section id="solutions" class="solutions">      
+      <div class="solution_box">
+         {% for solution in solutions %}
+            {% include "solutions/_solution_card.html" %}
+         {% endfor %}     
+      </div>         
+   </section>
 
+   <section id="team">
+      {% include "components/_show_team_members.html" %}
+   </section>
+
+   <section id="awards">
+      {% include "components/_show_awards.html" %}
+   </section>
+
+   {% comment %}     
    <section class="test">     
       <br><br>
       <br><br>
@@ -30,6 +46,7 @@
          <!-- <img src="{% static 'assets/test.jpg' %}"> -->
       </div>
       <!-- <button class="btn">WHAT WE DO<img src="{% static 'assets/circle-arrow.svg' %}"></button> -->
+      {% endcomment %}
    </section>
 </main>
 

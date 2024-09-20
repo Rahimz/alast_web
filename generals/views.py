@@ -7,6 +7,23 @@ from solutions.models import Solution, Award
 from multimedias.models import Gallery
 from .forms import ContactForm
 
+
+def HomeView(request):
+    solutions = Solution.objects.all().order_by('?')[:4]
+    context = dict(
+        page_title=_("Home"),
+        solutions=solutions,
+        team_members = TeamMember.objects.all().order_by('rank'),
+        awards=Award.objects.all(),
+    )
+    return render(
+        request,
+        'generals/home.html',
+        context
+
+    )
+
+
 def about(request):
     context = dict(
         page_title=_("About us"),

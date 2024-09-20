@@ -1,0 +1,19 @@
+<h2 class="main-title">
+    <span>
+       <span class="mil-thin">Our</span>
+    </span>awards
+ </h2>
+ <div class="award_box">
+    {% for award in awards %}
+    <div class="award">
+       <img src="{{ award.image.url }}">
+       <div>
+          <h5>{{ award.title }}</h5>
+          <h4>{{ award.year }}</h4>
+          {% if award.description %}
+          <h4>{{ award.description }}</h4>
+          {% endif %}
+       </div>
+    </div>
+    {% endfor %}     
+ </div>
