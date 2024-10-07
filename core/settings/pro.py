@@ -4,7 +4,7 @@ SECRET_KEY = pro_secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [server_ip]
 
 DATABASES = {
     'default': {
