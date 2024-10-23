@@ -14,24 +14,51 @@
          <span class="mil-thin">World Today</span>
       </span>
    </h1>
-   <section id="solutions" class="solutions">      
+   <section id="solutions" class="solutions">
       <div class="solution_box">
          {% for solution in solutions %}
-            {% include "solutions/_solution_card.html" %}
-         {% endfor %}     
-      </div>         
+         {% include "solutions/_solution_card.html" %}
+         {% endfor %}
+      </div>
+   </section>
+
+   <h1 class="main-title">
+      <span>{% trans "About" %} 
+         <span class="mil-thin">{% trans "Alast logo" %}</span>
+      </span>
+   </h1>
+   <section class="who_we_are">
+      <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>
+      <p>
+         According to the narration of the day when God made his covenant, there was light and then matter; The light of
+         existence is imagined to be Lime Green and the darkness is a deep and dark Navy Blue. In analogy, existence is
+         immeasurable and matter is small. The letter “A” is chosen to symbolize ALAST and D to symbolize the function
+         of "DESIGN". After creating the matter, the light is trapped in the cage of the matter after its descent to the
+         world, which must be dissipated and re-released through the channel of creativity. These two letters “AD” sit
+         together so that the roots are not forgotten so that the material lasts and the origin of good thoughts, words
+         and deeds remains green to the Last Day. Alast Design logo is the vision and functional manifesto for Alast
+         Design Company.
+      </p>
+      {% comment %}
+        
+      <p>
+         مفهوم لوگوی الست
+         بر اساس روایت عهد الست، نور بوده است و سپس ماده؛ نور هستی بخش سبز تصور می شود و تاریکی، سرمه ای ژرف. در برابری
+         و قیاس، هستی بخش، بی‌اندازه بوده و ماده کم‌اندازه. حرف A، به نماد از روز "الست" و D به نماد از کارکرد "دیزاین"
+         برگزیده شده است. پس از هستی بخشی به ماده، نور در قفس کالبد ماده پس از هبوط، گرفتار آمده است که باید از کانال
+         خلاقیت تللع و بازنشر داده شود. این دو در کنار هم می‌نشینند تا هم ریشه فراموش نشود و هم منشاء پندار، گفتار و
+         کردار نیک در جهان، سبز بماند. لوگوی الست دیزاین، چشم‌انداز و مانیفست عملکردی شرکت الست است.
+      </p>
+      {% endcomment %}
    </section>
 
    <section id="team">
       {% include "components/_show_team_members.html" %}
    </section>
 
-   <section id="awards">
-      {% include "components/_show_awards.html" %}
-   </section>
 
-   {% comment %}     
-   <section class="test">     
+   {% comment %}
+   <section class="test">
       <br><br>
       <br><br>
       <a href="#" class="btn btn-black1">What we do<img src="{% static 'assets/o.svg' %}"></a>

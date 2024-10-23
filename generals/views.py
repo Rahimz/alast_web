@@ -9,7 +9,7 @@ from .forms import ContactForm
 
 
 def HomeView(request):
-    solutions = Solution.objects.all().order_by('?')[:4]
+    solutions = Solution.objects.all().order_by('?')[:2]
     context = dict(
         page_title=_("Home"),
         solutions=solutions,
@@ -20,7 +20,6 @@ def HomeView(request):
         request,
         'generals/home.html',
         context
-
     )
 
 
