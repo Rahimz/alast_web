@@ -4,7 +4,7 @@ SECRET_KEY = pro_secret_key
 
 DEBUG = False
 
-ALLOWED_HOSTS = [server_ip]
+ALLOWED_HOSTS = ['alastdesign.com', 'www.alastdesign.com', server_ip]
 
 DATABASES = {
     'default': {
@@ -16,3 +16,8 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://alastdesign.com',
+    'https://www.alastdesign.com',
+]
