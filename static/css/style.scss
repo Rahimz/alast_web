@@ -24,7 +24,7 @@ body {margin: 0;}
         text-transform: uppercase;
         font-size: 12px; font-weight: 400; letter-spacing: 3px;
         a, span {color: $c_bb;}
-        a:hover {color: $orng;}
+        a:hover {color: $maincolor;}
         // background-color: aquamarine;
     }
 }
@@ -121,7 +121,7 @@ button.btn, a.btn {
 }
 a.no-rm {padding: 0 !important;}
 
-.btn-orange {background-color: $orng; color: $c_bb;}
+.btn-orange {background-color: $maincolor; color: $c_bb;}
 .btn-white {background-color: $c_ww; color: $c_bb;}
 .btn-black1 {background-color: $c_bb; color: $c_ww;}
 .btn-black2 {background-color: $c_bb; color: #999999;}

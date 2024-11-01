@@ -13,8 +13,8 @@ header {
   justify-content: center;
   position: fixed;
   top: 0;
-  width: 100vw;
-  padding: 20px 0;
+  width: 100%;
+  padding: 40px 0;
   z-index: 100;
   background-color: white;
 }
@@ -26,15 +26,50 @@ header div {
 header div img {
   height: 60px;
 }
+header div > a {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+header div > a img {
+  margin-right: 20px;
+}
+header div > a span {
+  color: black;
+}
+header div button {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  outline: 0;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+}
 header nav a {
   text-decoration: none;
   margin-left: 15px;
   color: black;
 }
 header nav a:hover, header nav a.active {
-  color: #ff9800;
+  color: #42ae70;
 }
 
+@media screen and (max-width: 1023px) {
+  header div button {
+    display: inline-block;
+  }
+  header nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    position: relative;
+    padding: 20px 0;
+  }
+}
 footer, footer div, footer nav {
   display: flex;
 }
@@ -43,18 +78,18 @@ footer {
   justify-content: center;
   width: 100%;
   padding: 120px 0;
-  background-color: black;
+  background-color: #0e1623;
 }
 footer div.fbox {
   justify-content: space-between;
   align-items: start;
-  width: 1100px;
+  width: 80%;
 }
 footer div.fbox .fleft {
   width: 50%;
 }
 footer div.fbox .fleft img {
-  height: 80px;
+  height: 120px;
 }
 footer div.fbox nav {
   flex-direction: column;
@@ -74,10 +109,39 @@ footer div.fbox nav a {
   text-decoration: none;
   margin-bottom: 15px;
 }
-footer div.fbox nav a.active {
-  color: #ff9800;
+footer div.fbox nav a:hover, footer div.fbox nav a.active {
+  color: #42ae70;
 }
 
+@media screen and (max-width: 1023px) {
+  footer {
+    padding: 80px 0;
+  }
+  footer div.fbox {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 60px 0 40px;
+  }
+  footer div.fbox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer div.fbox .fleft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+  footer div.fbox nav {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -99,6 +163,10 @@ img {
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .crumbbox {
@@ -107,10 +175,11 @@ body {
   position: absolute;
   top: 180px;
   left: 0;
+  z-index: 90;
 }
 .crumbbox .crumbline {
+  width: 10vw;
   height: 1px;
-  width: calc((100vw - 1175px) / 2);
   margin-right: 20px;
   background-color: rgb(220, 220, 220);
 }
@@ -125,13 +194,13 @@ body {
   color: black;
 }
 .crumbbox .breadcrumb a:hover {
-  color: #ff9800;
+  color: #42ae70;
 }
 
 .page-title {
   position: fixed;
-  bottom: 5vw;
-  left: 5%;
+  bottom: 70px;
+  left: 4.5vw;
   color: rgb(180, 180, 180);
   font-size: 12px;
   text-transform: uppercase;
@@ -140,11 +209,12 @@ body {
 }
 
 main {
-  margin: 100px auto 0;
-  background: url("../assets/alast-test.svg") no-repeat top right;
-  background-size: 500px;
-  width: 1160px;
+  position: relative;
+  width: 80%;
+  min-height: 100vh;
+  margin: 140px 0 0;
   padding: 150px 20px;
+  background-color: rgba(95, 158, 160, 0.171);
 }
 main > h1.main-title {
   font-size: 82px;
@@ -220,7 +290,7 @@ a.no-rm {
 }
 
 .btn-orange {
-  background-color: #ff9800;
+  background-color: #42ae70;
   color: black;
 }
 
@@ -371,7 +441,7 @@ section#team .team_box .member .member_over::after {
   display: block;
   width: 0;
   height: 5px;
-  background: #ff9800;
+  background: #42ae70;
   transition: width 500ms ease-in-out;
 }
 section#team .team_box .member .member_over:hover::after {
@@ -399,7 +469,7 @@ section#team .team_box .member .member_over .member_socials a:last-child {
   margin-right: 0;
 }
 section#team .team_box .member .member_over .member_socials a:hover {
-  color: #ff9800;
+  color: #42ae70;
 }
 
 section#solutions .solution_box, section#publications .solution_box {
@@ -432,7 +502,7 @@ section#solutions .solution_box .solution .sol_top, section#publications .soluti
   align-items: center;
 }
 section#solutions .solution_box .solution .sol_top span, section#publications .solution_box .solution .sol_top span {
-  color: #ff9800;
+  color: #42ae70;
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -511,7 +581,7 @@ section#contacts div:nth-child(2n) {
 }
 #sendmessage form .submitbox span::before {
   content: "* ";
-  color: #ff9800;
+  color: #42ae70;
 }
 
 section#solutions .solutions_top, section#publications .solutions_top {
@@ -519,4 +589,38 @@ section#solutions .solutions_top, section#publications .solutions_top {
   justify-content: space-between;
   align-items: center;
   background-color: yellowgreen;
+}
+
+@media screen and (max-width: 1023px) {
+  .crumbbox .crumbline {
+    width: 5vw;
+  }
+  .page-title {
+    position: fixed;
+    bottom: 70px;
+    left: 1.8vw;
+  }
+  main {
+    width: 90%;
+    padding: 120px 20px;
+  }
+  main > h1.main-title {
+    font-size: 62px;
+    margin: 0 0 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .crumbbox {
+    top: 140px;
+  }
+  .page-title {
+    display: none;
+  }
+  main {
+    margin: 0;
+  }
+  main > h1.main-title {
+    font-size: 42px;
+    margin: 0 0 60px;
+  }
 }

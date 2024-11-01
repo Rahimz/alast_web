@@ -92,7 +92,7 @@ section#team {
                     position: absolute; left: 0; bottom: 0;
                     display: block;
                     width: 0; height: 5px;
-                    background: $orng;
+                    background: $maincolor;
                     transition: width 500ms ease-in-out;
                 }
                 &:hover::after {width: 100%;}
@@ -113,7 +113,7 @@ section#team {
                 .member_socials {                
                     a {color: $c_ww; font-size: 12px; margin-right: 10px;}
                     a:last-child {margin-right: 0;}
-                    a:hover {color: $orng;}
+                    a:hover {color: $maincolor;}
                 }
             }
         }
@@ -147,7 +147,7 @@ section#solutions, section#publications {
                 flex-direction: row-reverse;
                 align-items: center;
                 span {
-                    color: $orng;
+                    color: $maincolor;
                     font-size: 12px;
                     text-transform:uppercase;
                 }

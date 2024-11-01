@@ -7,15 +7,21 @@ html {scroll-behavior: smooth;}
 a {text-decoration: none; transition: 0.2s; font-family: "Outfit", sans-serif;}
 img {display: block;}
 
-body {margin: 0;}
+body {
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; align-items: center;
+}
+
 
 .crumbbox {
     display: flex; align-items: center;
     position: absolute; top: 180px; left: 0;
+    z-index: 90;
     // background-color: burlywood;
 
     .crumbline {
-        height: 1px; width: calc((100vw - 1175px) / 2);
+        width: 10vw;
+        height: 1px; 
         margin-right: 20px;
         background-color: $g220;
     }
@@ -24,12 +30,12 @@ body {margin: 0;}
         text-transform: uppercase;
         font-size: 12px; font-weight: 400; letter-spacing: 3px;
         a, span {color: $c_bb;}
-        a:hover {color: $orng;}
+        a:hover {color: $maincolor;}
         // background-color: aquamarine;
     }
 }
 .page-title {
-    position: fixed; bottom: calc(100vw / 20); left: 5%;
+    position: fixed; bottom: 70px; left: 4.5vw;
     color: $g180; font-size: 12px;
     text-transform: uppercase;
     writing-mode: vertical-lr;
@@ -37,24 +43,15 @@ body {margin: 0;}
 }
 
 
-
-
-
-
-
-
-
-
-
 main {
-    // position: relative;
-    margin: 100px auto 0;
-    background: url("../assets/alast-test.svg") no-repeat top right;
-    background-size: 500px;
-    width: $ww;
+    position: relative;
+    width: 80%;
+    min-height: 100vh;
+    margin: 140px 0 0;
     padding: 150px 20px;
-    // height: 500px;
-    // background-color: rgba(95, 158, 160, 0.171);
+    // background: url("../assets/alast-test.svg") no-repeat top right;
+    // background-size: 500px;
+    background-color: rgba(95, 158, 160, 0.171);
 
     & > h1.main-title {
         font-size: 82px;
@@ -121,7 +118,7 @@ button.btn, a.btn {
 }
 a.no-rm {padding: 0 !important;}
 
-.btn-orange {background-color: $orng; color: $c_bb;}
+.btn-orange {background-color: $maincolor; color: $c_bb;}
 .btn-white {background-color: $c_ww; color: $c_bb;}
 .btn-black1 {background-color: $c_bb; color: $c_ww;}
 .btn-black2 {background-color: $c_bb; color: #999999;}
@@ -152,3 +149,34 @@ div.btn-shape {
 @import "pages/about";
 @import "pages/contact";
 @import "pages/solutions";
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+    .crumbbox .crumbline {width: 5vw;}
+    .page-title {position: fixed; bottom: 70px; left: 1.8vw;}
+    main {
+        width: 90%;
+        padding: 120px 20px;
+    
+        & > h1.main-title {
+            font-size: 62px;
+            margin: 0 0 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .crumbbox {top: 140px;}
+    .page-title {display: none;}
+    main {
+        margin: 0;
+    
+        & > h1.main-title {
+            font-size: 42px;
+            margin: 0 0 60px;
+        }
+    }
+}
