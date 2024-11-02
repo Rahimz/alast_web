@@ -39,7 +39,7 @@ section#contacts {
         .submitbox {
             // background-color: aquamarine;
             span {color: $g180;}
-            span::before {content: "* "; color: $orng;}
+            span::before {content: "* "; color: $maincolor;}
         }
     }
 }

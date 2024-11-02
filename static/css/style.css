@@ -13,8 +13,8 @@ header {
   justify-content: center;
   position: fixed;
   top: 0;
-  width: 100vw;
-  padding: 20px 0;
+  width: 100%;
+  padding: 30px 0;
   z-index: 100;
   background-color: white;
 }
@@ -26,15 +26,50 @@ header div {
 header div img {
   height: 60px;
 }
+header div > a {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+header div > a img {
+  margin-right: 20px;
+}
+header div > a span {
+  color: black;
+}
+header div button {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid gray;
+  outline: 0;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+}
 header nav a {
   text-decoration: none;
   margin-left: 15px;
   color: black;
 }
 header nav a:hover, header nav a.active {
-  color: #ff9800;
+  color: #42ae70;
 }
 
+@media screen and (max-width: 1023px) {
+  header div button {
+    display: inline-block;
+  }
+  header nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  header {
+    position: relative;
+    padding: 20px 0;
+  }
+}
 footer, footer div, footer nav {
   display: flex;
 }
@@ -42,19 +77,19 @@ footer, footer div, footer nav {
 footer {
   justify-content: center;
   width: 100%;
-  padding: 120px 0;
-  background-color: black;
+  padding: 80px 0;
+  background-color: #0e1623;
 }
 footer div.fbox {
   justify-content: space-between;
   align-items: start;
-  width: 1100px;
+  width: 80%;
 }
 footer div.fbox .fleft {
   width: 50%;
 }
 footer div.fbox .fleft img {
-  height: 80px;
+  height: 120px;
 }
 footer div.fbox nav {
   flex-direction: column;
@@ -74,10 +109,39 @@ footer div.fbox nav a {
   text-decoration: none;
   margin-bottom: 15px;
 }
-footer div.fbox nav a.active {
-  color: #ff9800;
+footer div.fbox nav a:hover, footer div.fbox nav a.active {
+  color: #42ae70;
 }
 
+@media screen and (max-width: 1023px) {
+  footer {
+    padding: 50px 0;
+  }
+  footer div.fbox {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 20px 0;
+  }
+  footer div.fbox {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer div.fbox .fleft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  footer div.fbox nav {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -99,18 +163,23 @@ img {
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .crumbbox {
   display: flex;
   align-items: center;
   position: absolute;
-  top: 180px;
+  top: 140px;
   left: 0;
+  z-index: 90;
 }
 .crumbbox .crumbline {
+  width: 10vw;
   height: 1px;
-  width: calc((100vw - 1175px) / 2);
   margin-right: 20px;
   background-color: rgb(220, 220, 220);
 }
@@ -125,13 +194,13 @@ body {
   color: black;
 }
 .crumbbox .breadcrumb a:hover {
-  color: #ff9800;
+  color: #42ae70;
 }
 
 .page-title {
   position: fixed;
-  bottom: 5vw;
-  left: 5%;
+  bottom: 50px;
+  left: 4.5vw;
   color: rgb(180, 180, 180);
   font-size: 12px;
   text-transform: uppercase;
@@ -140,15 +209,16 @@ body {
 }
 
 main {
-  margin: 100px auto 0;
-  background: url("../assets/alast-test.svg") no-repeat top right;
-  background-size: 500px;
-  width: 1160px;
-  padding: 150px 20px;
+  position: relative;
+  width: 80%;
+  min-height: 100vh;
+  margin: 120px 0 0;
+  padding: 50px 20px;
 }
 main > h1.main-title {
+  text-align: center;
   font-size: 82px;
-  margin: 0 0 80px;
+  margin: 0 0 50px;
 }
 main > h1.main-title span.mil-thin {
   font-weight: 100;
@@ -157,14 +227,13 @@ main > h1.main-title span.mil-thin {
 section {
   display: flex;
   flex-direction: column;
-  scroll-margin-top: 200px;
-  margin: 0 0 150px;
+  margin: 0 0 80px;
 }
 section:last-child {
   margin: 0;
 }
 section p {
-  width: 70%;
+  width: 100%;
   color: rgb(180, 180, 180);
   text-align: justify;
 }
@@ -174,7 +243,7 @@ section h2 {
 }
 section > h2.main-title {
   font-size: 52px;
-  margin: 0 0 70px;
+  margin: 0 0 20px;
 }
 section > h2.main-title span.mil-thin {
   font-weight: 100;
@@ -220,7 +289,7 @@ a.no-rm {
 }
 
 .btn-orange {
-  background-color: #ff9800;
+  background-color: #42ae70;
   color: black;
 }
 
@@ -246,6 +315,10 @@ div.btn-shape {
   background-size: cover;
   border-radius: 50px;
 }
+section#alast_logo p {
+  width: 100%;
+}
+
 #who_we_are, #strategies, #awards, #gallery, #team {
   align-items: center;
 }
@@ -261,7 +334,7 @@ section#awards .award_box .award {
   flex-direction: column;
   justify-content: space-between;
   width: 250px;
-  margin-right: 80px;
+  margin-right: 40px;
 }
 section#awards .award_box .award:last-child {
   margin-right: 0;
@@ -371,7 +444,7 @@ section#team .team_box .member .member_over::after {
   display: block;
   width: 0;
   height: 5px;
-  background: #ff9800;
+  background: #42ae70;
   transition: width 500ms ease-in-out;
 }
 section#team .team_box .member .member_over:hover::after {
@@ -399,56 +472,105 @@ section#team .team_box .member .member_over .member_socials a:last-child {
   margin-right: 0;
 }
 section#team .team_box .member .member_over .member_socials a:hover {
-  color: #ff9800;
+  color: #42ae70;
 }
 
-section#solutions .solution_box, section#publications .solution_box {
+section#solutions .solution_box, section#publications .solution_box, section#clients .solution_box {
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-section#solutions .solution_box .solution, section#publications .solution_box .solution {
-  width: 47%;
-  margin: 0 6% 80px 0;
-}
-section#solutions .solution_box .solution:nth-child(2n), section#publications .solution_box .solution:nth-child(2n) {
-  margin: 0 0 80px 0;
-}
-section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img {
-  background-color: rgb(238, 236, 236);
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
+section#solutions .solution_box .solution, section#publications .solution_box .solution, section#clients .solution_box .solution {
+  width: 37vw;
   margin-bottom: 50px;
 }
-section#solutions .solution_box .solution .sol_img img, section#publications .solution_box .solution .sol_img img {
+section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
   width: 100%;
+  height: 25vw;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+section#solutions .solution_box .solution .sol_img img, section#publications .solution_box .solution .sol_img img, section#clients .solution_box .solution .sol_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: 500ms;
 }
-section#solutions .solution_box .solution .sol_img:hover img, section#publications .solution_box .solution .sol_img:hover img {
+section#solutions .solution_box .solution .sol_img:hover img, section#publications .solution_box .solution .sol_img:hover img, section#clients .solution_box .solution .sol_img:hover img {
   transform: scale(1.05);
 }
-section#solutions .solution_box .solution .sol_top, section#publications .solution_box .solution .sol_top {
+section#solutions .solution_box .solution .sol_top, section#publications .solution_box .solution .sol_top, section#clients .solution_box .solution .sol_top {
   justify-content: space-between;
-  flex-direction: row-reverse;
   align-items: center;
 }
-section#solutions .solution_box .solution .sol_top span, section#publications .solution_box .solution .sol_top span {
-  color: #ff9800;
+section#solutions .solution_box .solution .sol_top span, section#publications .solution_box .solution .sol_top span, section#clients .solution_box .solution .sol_top span {
+  color: #42ae70;
   font-size: 12px;
   text-transform: uppercase;
 }
-section#solutions .solution_box .solution .sol_top a, section#publications .solution_box .solution .sol_top a {
+section#solutions .solution_box .solution .sol_top a, section#publications .solution_box .solution .sol_top a, section#clients .solution_box .solution .sol_top a {
   color: black;
   font-size: 28px;
   font-weight: 700;
 }
-section#solutions .solution_box .solution .sol_top a:hover, section#publications .solution_box .solution .sol_top a:hover {
+section#solutions .solution_box .solution .sol_top a:hover, section#publications .solution_box .solution .sol_top a:hover, section#clients .solution_box .solution .sol_top a:hover {
   color: rgb(70, 70, 70);
 }
-section#solutions .solution_box .solution p, section#publications .solution_box .solution p {
-  margin: 30px 0;
+section#solutions .solution_box .solution p, section#publications .solution_box .solution p, section#clients .solution_box .solution p {
+  margin: 20px 0;
   width: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  section#gallery .gallery {
+    flex-direction: column;
+  }
+  section#gallery .gallery .gal_image {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  section#solutions .solution_box .solution, section#publications .solution_box .solution, section#clients .solution_box .solution {
+    width: 42vw;
+    margin-bottom: 30px;
+  }
+  section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
+    height: 28vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  section#gallery .gallery .gal_image {
+    height: unset;
+  }
+  section#gallery .gallery .gal_image .img {
+    height: unset;
+  }
+  section#gallery .gallery .gal_image .img img {
+    width: 100%;
+    transition: 0.5s;
+  }
+  section#awards .award_box {
+    flex-direction: column;
+  }
+  section#awards .award_box .award {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  section#team .team_box {
+    flex-direction: column;
+  }
+  section#team .team_box .member {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  section#solutions .solution_box .solution, section#publications .solution_box .solution, section#clients .solution_box .solution {
+    width: 100%;
+  }
+  section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
+    height: 60vw;
+  }
+}
 #contacts, #sendmessage {
   align-items: center;
 }
@@ -511,7 +633,7 @@ section#contacts div:nth-child(2n) {
 }
 #sendmessage form .submitbox span::before {
   content: "* ";
-  color: #ff9800;
+  color: #42ae70;
 }
 
 section#solutions .solutions_top, section#publications .solutions_top {
@@ -519,4 +641,39 @@ section#solutions .solutions_top, section#publications .solutions_top {
   justify-content: space-between;
   align-items: center;
   background-color: yellowgreen;
+}
+
+@media screen and (max-width: 1023px) {
+  .crumbbox .crumbline {
+    width: 5vw;
+  }
+  .page-title {
+    left: 1.8vw;
+  }
+  main {
+    width: 90%;
+    padding: 50px 0;
+  }
+  main > h1.main-title {
+    font-size: 62px;
+  }
+  section > h2.main-title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .crumbbox {
+    display: none;
+  }
+  .page-title {
+    display: none;
+  }
+  main {
+    margin: 0;
+    padding: 30px 0;
+  }
+  main > h1.main-title {
+    font-size: 42px;
+    margin: 0 0 30px;
+  }
 }

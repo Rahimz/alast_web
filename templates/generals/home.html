@@ -10,24 +10,25 @@
 <main class="main_home">
 
    <h1 class="main-title">
-      <span>Designing a <br> Better
-         <span class="mil-thin">World Today</span>
+      <span>
+         <span class="mil-thin">Designing a</span>
+         Better World
       </span>
    </h1>
    <section id="solutions" class="solutions">
       <div class="solution_box">
          {% for solution in solutions %}
-         {% include "solutions/_solution_card.html" %}
+            {% include "solutions/_solution_card.html" %}
          {% endfor %}
       </div>
    </section>
 
    <h1 class="main-title">
-      <span>{% trans "About" %} 
-         <span class="mil-thin">{% trans "Alast logo" %}</span>
+      <span>{% trans "Alast logo" %}
+         <span class="mil-thin"></span>
       </span>
    </h1>
-   <section class="who_we_are">
+   <section id="alast_logo">
       <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>
       <p>
          According to the narration of the day when God made his covenant, there was light and then matter; The light of
@@ -53,7 +54,7 @@
    </section>
 
    <section id="team">
-      {% include "components/_show_team_members.html" %}
+      <!-- {% include "components/_show_team_members.html" %} -->
    </section>
 
 

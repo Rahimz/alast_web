@@ -1,21 +1,11 @@
 {% load i18n static %}
 
 <div class="solution">
-	<div class="sol_img">
-		<!-- <a href="">
-		   {% if solution.thumbnail %}
-		   <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="250px" height="auto">
-		   {% else %}
-		   <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="250px" height="auto">        
-		   {% endif %}
-		</a> -->
-	</div>
-
 	<div>
 		<div class="sol_top">
-			<span>category</span>
+			<!-- <span>category</span> -->
 			<a href="">
-				<h4>{{ client }}</h4>
+				<h4>{{ pub.title }}</h4>
 			</a>
 		</div>
 
@@ -23,6 +13,6 @@
 		
 		<p>{{ pub.subtitle }}</p>
 
-		<a href="#" class="btn btn-white no-rm">Read More<img src="{% static 'assets/g1b.svg' %}"></a>
+		<a href="#" class="btn btn-white no-rm">PDF<img src="{% static 'assets/g1b.svg' %}"></a>
 	</div>    
 </div>

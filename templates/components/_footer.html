@@ -2,14 +2,14 @@
 
 <div class="fbox">
     <div class="fleft">
-        <img src="{% static 'generals/img/logo.png' %}" alt="">
+        <img src="{% static 'generals/img/Alast-Logo-green-dark.jpg' %}" alt="">
     </div>
 
     <nav>
-        <a href="{% url 'generals:home' %}" class="{% if page_title == 'Home' %}active{% endif %}">{% trans "Home" %}</a>
         <a href="{% url 'solutions:solutions' %}" class="{% if page_title == 'Solutios' %}active{% endif %}">{% trans "Solutions" %}</a>
         <a href="{% url 'publications:publications' %}" class="{% if page_title == 'Publications' %}active{% endif %}">{% trans "Publications" %}</a>
         <a href="{% url 'clients:clients' %}" class="{% if page_title == 'Clients' %}active{% endif %}">{% trans "Clients" %}</a>
+        <br>
         <a href="{% url 'generals:about_us' %}" class="{% if page_title == 'About us' %}active{% endif %}">{% trans "About us" %}</a>
         <a href="{% url 'generals:contact_us' %}" class="{% if page_title == 'Contact us' %}active{% endif %}">{% trans "Contact us" %}</a>
     </nav>

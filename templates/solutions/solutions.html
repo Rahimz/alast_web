@@ -6,16 +6,18 @@
 <main class="main_solutions">
 
    <h1 class="main-title">
-      <span>Check
-         <span class="mil-thin">out<br>our</span>
+      <span>
+         <span class="mil-thin">our</span>
       </span>{% trans "Solutions" %}
    </h1>
 
+   {% comment %}
    {% include "../components/btns/wg-down-inside.html" with title='solutions' link='solutions' %}
+   {% endcomment %}
    
    {% for category in categories %}
 
-      <section id="solutions" class="solutions">
+      <section id="solutions">
          <!-- <div class="solutions_top"> -->
             <h2 class="main-title">
                <span>{{ category }}
@@ -25,7 +27,6 @@
             <!-- <a href="" class="btn btn-white no-rm">view all solutions<img src="{% static 'assets/g1b.svg' %}"></a> -->
          <!-- </div> -->
 
-         <!-- <br><br><br> -->
          <div class="solution_box">
             {% for solution in category.solutions.all %}
                {% include "solutions/_solution_card.html" %}

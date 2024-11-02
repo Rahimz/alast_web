@@ -4,19 +4,19 @@
 	<div class="sol_img">
 		<a href="{% url 'solutions:solution' solution.slug %}">
 		   {% if solution.thumbnail %}
-		   <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="250px" height="auto">
+		   <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}">
 		   {% else %}
-		   <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="250px" height="auto">        
+		   <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}">        
 		   {% endif %}
 		</a>
 	</div>
 
 	<div>
 		<div class="sol_top">
-			<span>{{ solution.category }}</span>
 			<a href="{% url 'solutions:solution' solution.slug %}">
 				<h4>{{ solution.title }}</h4>
 			</a>
+			<span>{{ solution.category }}</span>
 		</div>  
 		
 		<p>{{ solution.description | truncatewords:5 }}</p>

@@ -2,21 +2,20 @@ footer, footer div, footer nav {display: flex;}
 
 footer {
     justify-content: center;
-    // position: fixed; top: 0;
     width: 100%;
-    padding: 120px 0;
-    background-color: $c_bb;
-
+    padding: 80px 0;
+    // background-color: $c_bb;
+    background-color: #0e1623;
 
     div.fbox {
         justify-content: space-between;
         align-items: start;
-        width: 1100px;
-        // background-color: aquamarine;
+        width: 80%;
+        // background-color: rgb(124, 131, 129);
 
         .fleft {
             width: 50%;
-            img {height: 80px;}
+            img {height: 120px;}
         }
         nav {
             flex-direction: column;
@@ -36,8 +35,42 @@ footer {
             a {
                 text-decoration: none;
                 margin-bottom: 15px;
-                &.active {color: $orng;}
+                &:hover, &.active {color: $maincolor;}
             }
         }
     }
+}
+
+
+@media screen and (max-width: 1023px) {
+    footer {
+        padding: 50px 0; 
+        div.fbox {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        padding: 20px 0;
+    
+        div.fbox {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            .fleft {
+                width: 100%;
+                display: flex; justify-content: center;
+                margin-bottom: 40px;
+            }
+            nav {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 40px;    
+            }
+        }
+    }
+    
 }

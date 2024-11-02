@@ -7,15 +7,21 @@ html {scroll-behavior: smooth;}
 a {text-decoration: none; transition: 0.2s; font-family: "Outfit", sans-serif;}
 img {display: block;}
 
-body {margin: 0;}
+body {
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; align-items: center;
+}
+
 
 .crumbbox {
     display: flex; align-items: center;
-    position: absolute; top: 180px; left: 0;
+    position: absolute; top: 140px; left: 0;
+    z-index: 90;
     // background-color: burlywood;
 
     .crumbline {
-        height: 1px; width: calc((100vw - 1175px) / 2);
+        width: 10vw;
+        height: 1px; 
         margin-right: 20px;
         background-color: $g220;
     }
@@ -24,12 +30,12 @@ body {margin: 0;}
         text-transform: uppercase;
         font-size: 12px; font-weight: 400; letter-spacing: 3px;
         a, span {color: $c_bb;}
-        a:hover {color: $orng;}
+        a:hover {color: $maincolor;}
         // background-color: aquamarine;
     }
 }
 .page-title {
-    position: fixed; bottom: calc(100vw / 20); left: 5%;
+    position: fixed; bottom: 50px; left: 4.5vw;
     color: $g180; font-size: 12px;
     text-transform: uppercase;
     writing-mode: vertical-lr;
@@ -37,28 +43,20 @@ body {margin: 0;}
 }
 
 
-
-
-
-
-
-
-
-
-
 main {
-    // position: relative;
-    margin: 100px auto 0;
-    background: url("../assets/alast-test.svg") no-repeat top right;
-    background-size: 500px;
-    width: $ww;
-    padding: 150px 20px;
-    // height: 500px;
+    position: relative;
+    width: 80%;
+    min-height: 100vh;
+    margin: 120px 0 0;
+    padding: 50px 20px;
+    // background: url("../assets/alast-test.svg") no-repeat top right;
+    // background-size: 500px;
     // background-color: rgba(95, 158, 160, 0.171);
 
     & > h1.main-title {
+        text-align: center;
         font-size: 82px;
-        margin: 0 0 80px;
+        margin: 0 0 50px;
         // background-color: blueviolet;
         span.mil-thin {font-weight: 100;}
     }
@@ -66,16 +64,16 @@ main {
 section {
     display: flex;
     flex-direction: column; 
-    scroll-margin-top: 200px;
-    margin: 0 0 150px;
+    // scroll-margin-top: 200px;
+    margin: 0 0 80px;
     &:last-child {margin: 0;}
-    p {width: 70%; color: $g180; text-align: justify;}
-    // background-color: #d89595;
+    p {width: 100%; color: $g180; text-align: justify;}
+    // background-color: #f1cece;
     
     h2 {text-align: center; text-transform: capitalize;}
     & > h2.main-title {
         font-size: 52px;
-        margin: 0 0 70px;
+        margin: 0 0 20px;
         // background-color: rgb(78, 156, 71);
         span.mil-thin {font-weight: 100;}
     }
@@ -121,7 +119,7 @@ button.btn, a.btn {
 }
 a.no-rm {padding: 0 !important;}
 
-.btn-orange {background-color: $orng; color: $c_bb;}
+.btn-orange {background-color: $maincolor; color: $c_bb;}
 .btn-white {background-color: $c_ww; color: $c_bb;}
 .btn-black1 {background-color: $c_bb; color: $c_ww;}
 .btn-black2 {background-color: $c_bb; color: #999999;}
@@ -145,10 +143,41 @@ div.btn-shape {
 
 
 
-
-
-
-
+@import "pages/home";
 @import "pages/about";
 @import "pages/contact";
 @import "pages/solutions";
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+    .crumbbox .crumbline {width: 5vw;}
+    .page-title {left: 1.8vw;}
+    main {
+        width: 90%;
+        padding: 50px 0;
+
+        & > h1.main-title {
+            font-size: 62px;
+        }
+    }
+    section {        
+        & > h2.main-title {font-size: 32px;}
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .crumbbox {display: none;}
+    .page-title {display: none;}
+    main {
+        margin: 0;
+        padding: 30px 0;
+    
+        & > h1.main-title {
+            font-size: 42px;
+            margin: 0 0 30px;
+        }
+    }
+}

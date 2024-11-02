@@ -13,7 +13,8 @@
         {% include "components/_header.html" %}
     </header>
 
-	{% if not page_title == 'Home' or not page_title == 'Contact us' %}
+	{% comment %}
+	{% if not page_title == 'home' or not page_title == 'Contact us' %}
 	<div class="crumbbox">
 		<div class="crumbline"><!-- must be empty --></div>
 		<div class="breadcrumb">
@@ -28,14 +29,15 @@
 				{% endif %}
 				
 				{% if not forloop.last %}
-					<span> / </span>                 
+				<span> / </span>                 
 				{% endif %}
 			{% endfor %}
-		   
+			
 			{#Branding and Identity design#}
 		</div>
 	</div>
 	{% endif %}
+	{% endcomment %}
 	
 	<!-- <svg width="200" height="180" xmlns="http://www.w3.org/2000/svg">
 		<rect x="30" y="30" height="110" width="110" style="stroke:green;fill:red">
