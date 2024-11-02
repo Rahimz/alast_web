@@ -17,7 +17,7 @@ section#awards {
             flex-direction: column;
             justify-content: space-between;
             width: 250px;
-            margin-right: 80px;
+            margin-right: 40px;
             &:last-child {margin-right: 0;}
     
             img {width: 100%; margin-bottom: 30px;}
@@ -32,8 +32,9 @@ section#awards {
 section#gallery {
     h3 {text-align: center; margin-bottom: 20px;}
     .gallery {
-        // background-color: bisque;
+        // max-width: 100%;
         margin-bottom: 30px;
+        // background-color: bisque;
         
         .gal_image {
             flex-direction: column;
@@ -120,32 +121,31 @@ section#team {
     }
 }
 
-section#solutions, section#publications {
-    // background-color: aqua;
+section#solutions, section#publications, section#clients {
     .solution_box {
         flex-wrap: wrap;
+        justify-content: space-between;
         
         .solution {
-            width: 47%;
-            margin: 0 6% 80px 0;
-            &:nth-child(2n) {margin: 0 0 80px 0;;}
+            width: 37vw;
+            margin-bottom: 50px;
+            // &:nth-child(2n) {margin: 0 0 80px 0;;}
             // background-color: bisque;
 
-
             .sol_img {
-                background-color: rgb(238, 236, 236);
+                // background-color: rgb(238, 236, 236);
                 width: 100%;
-                height: 400px;
+                height: 25vw;
                 overflow: hidden;
-                margin-bottom: 50px;
-                img {width: 100%; transition: 500ms;}
+                margin-bottom: 20px;
+                img {width: 100%; height: 100%; object-fit: cover; transition: 500ms;}
                 &:hover img {transform: scale(1.05);}
             }
 
             .sol_top {
                 justify-content: space-between;
-                flex-direction: row-reverse;
                 align-items: center;
+                // background-color: rgb(119, 85, 40);
                 span {
                     color: $maincolor;
                     font-size: 12px;
@@ -156,7 +156,75 @@ section#solutions, section#publications {
                 // text-transform: capitalize;
             }
 
-            p {margin: 30px 0; width: 100%;}
+            p {margin: 20px 0; width: 100%;}
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+    section#gallery {
+        .gallery {
+            flex-direction: column;
+            .gal_image {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    section#solutions, section#publications, section#clients {
+        .solution_box {            
+            .solution {
+                width: 42vw;
+                margin-bottom: 30px;
+                
+                .sol_img {height: 28vw;}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section#gallery {
+        .gallery {            
+            .gal_image {
+                height: unset;                
+                .img {
+                    height: unset; 
+                    img {width: 100%; transition: 0.5s;}
+                }
+            }
+        }
+    }
+    section#awards {
+        .award_box {
+            flex-direction: column;
+            .award {
+                margin-right: 0px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    section#team {
+        .team_box {
+            flex-direction: column;
+            .member {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    section#solutions, section#publications, section#clients {
+        .solution_box {           
+            .solution {
+                width: 100%;    
+                .sol_img {height: 60vw;}
+            }
         }
     }
 }

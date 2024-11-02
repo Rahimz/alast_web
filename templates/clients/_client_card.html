@@ -2,23 +2,18 @@
 
 <div class="solution">
 	<div class="sol_img">
-		<!-- <a href="">
-		   {% if solution.thumbnail %}
-		   <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}" width="250px" height="auto">
-		   {% else %}
-		   <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}" width="250px" height="auto">        
-		   {% endif %}
-		</a> -->
+		<a href="#">
+			<img src="{{ client.logo.url }}" alt="">
+		</a>
 	</div>
 
 	<div>
 		<div class="sol_top">
-			<img src="{{ client.logo.url }}" alt="" width="auto" height="150px">
-			<a href="">
-				<h4>{{ client }}</h4>
+			<a href="#">
+				<h4>{{ client.name }}</h4>
 			</a>
 		</div>
-		
-		<a href="#" class="btn btn-white no-rm">...<img src="{% static 'assets/g1b.svg' %}"></a>
+		<br>
+		<a href="#" class="btn btn-white no-rm">Read More<img src="{% static 'assets/g1b.svg' %}"></a>
 	</div>    
 </div>

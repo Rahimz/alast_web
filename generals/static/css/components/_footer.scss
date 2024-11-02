@@ -3,7 +3,7 @@ footer, footer div, footer nav {display: flex;}
 footer {
     justify-content: center;
     width: 100%;
-    padding: 120px 0;
+    padding: 80px 0;
     // background-color: $c_bb;
     background-color: #0e1623;
 
@@ -44,7 +44,7 @@ footer {
 
 @media screen and (max-width: 1023px) {
     footer {
-        padding: 80px 0; 
+        padding: 50px 0; 
         div.fbox {
             width: 90%;
         }
@@ -53,7 +53,7 @@ footer {
 
 @media screen and (max-width: 767px) {
     footer {
-        padding: 60px 0 40px;
+        padding: 20px 0;
     
         div.fbox {
             flex-direction: column;
@@ -63,7 +63,7 @@ footer {
             .fleft {
                 width: 100%;
                 display: flex; justify-content: center;
-                margin-bottom: 60px;
+                margin-bottom: 40px;
             }
             nav {
                 text-align: center;

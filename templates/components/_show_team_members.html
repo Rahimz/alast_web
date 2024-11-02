@@ -4,15 +4,15 @@
     <span>team
        <span class="mil-thin">members</span>
     </span>
- </h2>
- <div class="team_box">
+</h2>
+<div class="team_box">
     {% for member in team_members %}
     <div class="member">
-       <img src="{{ member.avatar.url }}" alt="">
-       <div class="member_over">
-          <a href="#">{{ member.user }}</a>
-          <span>{{ member.role }}</span>
-          <div class="member_socials">
+        <img src="{{ member.avatar.url }}" alt="">
+        <div class="member_over">
+            <a href="#">{{ member.user }}</a>
+            <span>{{ member.role }}</span>
+            <div class="member_socials">
             {% if member.instagram %}
             <a href="{{ member.instagram }}">
                 <img src="{% static 'assets/logos/instagram.png' %}" alt="instagram logo" height="16px" width="auto"></a>              
@@ -33,14 +33,14 @@
             <a href="{{ member.twitter }}">
                 <img src="{% static 'assets/logos/twitter.png' %}" alt="twitter logo" height="16px" width="auto"></a>              
             {% endif %}
-      
+        
             {% if member.link %}
             <a href="{{ member.link }}">
                 <img src="{% static 'assets/logos/link.png' %}" alt="link logo" height="16px" width="auto"></a>              
             {% endif %}
-      
-          </div>
-       </div>
+        
+            </div>
+        </div>
     </div>
     {% endfor %}     
- </div>
+</div>

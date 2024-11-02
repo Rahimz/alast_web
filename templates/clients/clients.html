@@ -12,12 +12,14 @@
       </span>
    </h1>
 
+   {% comment %}
    {% include "../components/btns/wg-down-inside.html" with title='clients' link='clients' %}
+   {% endcomment %}
 
-   <section id="clients"></section>
+   <section id="clients">
 		<div class="solution_box">
 			{% for client in clients %}
-			  {% include "clients/_client_card.html" %}
+			   {% include "clients/_client_card.html" %}
 			{% endfor %}   
 		</div>         
 	</section>
