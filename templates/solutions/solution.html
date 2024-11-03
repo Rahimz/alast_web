@@ -23,6 +23,35 @@
          {% endif %}
       </figure>
       <div>
+         <h3>{% trans "Title" %}</h3>
+         <p>{{ solution.title }}</p>
+         
+         {% if solution.designer %}
+         <h3>{% trans "Designer" %}</h3>
+         <p>{{ solution.designer }}</p>           
+         {% endif %}
+         
+         {% if solution.date %}
+         <h3>{% trans "Design date" %}</h3>
+         <p>{{ solution.date }}</p>           
+         {% endif %}
+         
+         {% if solution.product_model %}
+         <h3>{% trans "Product model" %}</h3>
+         <p>{{ solution.product_model }}</p>           
+         {% endif %}
+         
+         {% if solution.manufacturing_methods %}
+         <h3>{% trans "Manufacturing methods" %}</h3>
+         <p>{{ solution.manufacturing_methods }}</p>           
+         {% endif %}
+
+         <div>
+            {% if solution.cover_image %}
+              <img src="{{ solution.cover_image.url }}" alt="" width="100%" height="auto">
+            {% endif %}            
+         </div>
+
          <h3>{% trans "Project description" %}</h3>
          <p>
             {{ solution.description | linebreaksbr }}     
@@ -38,6 +67,8 @@
       {% endif %}
 
       <div>
+         {% if solution.images.all %}
+           
          <h3>{% trans "Project gallery" %}</h3>
          {% for item in solution.images.all %}
          <div>
@@ -47,12 +78,13 @@
             </a>
             <br>
             {% if item.title %}
-               {{ item.title }}
+            {{ item.title }}
             {% endif %}
             
          </div>
          {% endfor %}
-      
+         
+         {% endif %}
       </div>
    </section>
    

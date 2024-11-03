@@ -66,12 +66,6 @@ class Solution(TimeStampedModel):
         null=True,
         blank=True
     )
-    product_model = models.CharField(
-        _("Product model"),
-        max_length=150,
-        null=True,
-        blank=True
-    )
     design_date = models.CharField(
         _("Design date"),
         max_length=150,

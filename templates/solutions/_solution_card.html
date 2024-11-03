@@ -3,9 +3,7 @@
 <div class="solution">
 	<div class="sol_img">
 		<a href="{% url 'solutions:solution' solution.slug %}">
-		   {% if solution.thumbnail %}
-		   <img src="{{ solution.thumbnail.url }}" alt="{{ solution.title }}">
-		   {% else %}
+		   {% if solution.cover_image %}		   
 		   <img src="{{ solution.cover_image.url }}" alt="{{ solution.title }}">        
 		   {% endif %}
 		</a>
