@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     'tools.apps.ToolsConfig',
     'multimedias.apps.MultimediasConfig',
     'publications.apps.PublicationsConfig',
-
+    
+    # this module should be the end of list
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
