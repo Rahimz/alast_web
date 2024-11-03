@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    'taggit',
+    
     'accounts.apps.AccountsConfig',
     'generals.apps.GeneralsConfig',
     'solutions.apps.SolutionsConfig',

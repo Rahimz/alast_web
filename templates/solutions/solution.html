@@ -25,14 +25,23 @@
       <div>
          <h3>{% trans "Project description" %}</h3>
          <p>
-            {{ solution.description }}     
+            {{ solution.description | linebreaksbr }}     
          </p>
       </div>
+      {% if solution.tags %}
+      <div>
+         {% for tag in solution.tags.all %}
+			<a href="{% url 'generals:tags' tag.slug %}" style="border: 1px solid; border-radius: 10px; padding: 2px 6px; color: white; background-color: #42ae70; margin: 5px;"><span>{{ tag.name }}</span></a>            
+			{% endfor %}
+        
+      </div>
+      {% endif %}
+
       <div>
          <h3>{% trans "Project gallery" %}</h3>
          {% for item in solution.images.all %}
          <div>
-      
+            
             <a href="{{ item.file.url }}" target="_blank">
                <img src="{{ item.file.url }}" alt="item.title" height="250" width="auto">
             </a>

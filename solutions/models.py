@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
+from taggit.managers import TaggableManager
 
-from tools.models import TimeStampedModel
+from tools.models import TimeStampedModel, ActiveManager
 from tools.make_thumbnail import make_thumbnail
 from clients.models import Client
 
@@ -71,6 +72,16 @@ class Solution(TimeStampedModel):
         null=True,
         blank=True
     )
+    tags = TaggableManager(
+        _("Tags"),        
+        blank=True
+    )
+    active = models.BooleanField(
+        _("Active"),
+        default=True,
+    )
+    objects = models.Manager()
+    actives = ActiveManager()
     # client = mdoels.CharField(null=True, blank=True)
     # client_logo = models.ImageField(null=True, blank=True)
 

@@ -1,15 +1,17 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from django.db.models import Prefetch, Count, Q
+from taggit.models import Tag
 
 from accounts.models import TeamMember
-from solutions.models import Solution, Award
+from solutions.models import Solution, Award, SolutionCategory
 from multimedias.models import Gallery
 from .forms import ContactForm
 
 
 def HomeView(request):
-    solutions = Solution.objects.all().order_by('?')[:2]
+    solutions = Solution.actives.all().order_by('?')[:2]
     context = dict(
         page_title=_("Home"),
         solutions=solutions,
@@ -28,7 +30,7 @@ def about(request):
         page_title=_("About us"),
         crumbs=[(_("About us"), None),],
         team_members = TeamMember.objects.all().order_by('rank'),
-        solutions=Solution.objects.order_by('?')[:4],
+        solutions=Solution.actives.all().order_by('?')[:4],
         awards=Award.objects.all(),
         galleries=Gallery.objects.all()
     )
@@ -55,5 +57,26 @@ def ContactUsView(request):
     return render (
         request,
         'generals/contact_us.html',
+        context
+    )    
+    
+    
+def TagListView(request, tag_slug):
+    tag = get_object_or_404(Tag, slug=tag_slug)
+    solutions = Solution.actives.filter(tags__in=[tag])    
+    
+    categories = SolutionCategory.objects.annotate(
+    active_solution_count=Count('solutions', filter=Q(solutions__in=solutions))
+        ).filter(active_solution_count__gt=0).prefetch_related(Prefetch('solutions', queryset=solutions))
+    context = dict(
+        page_title=_("Tag") + f": {tag.name}",
+        # search_query=search_query,
+        categories=categories,
+        tag=tag,
+
+    )
+    return render(
+        request,
+        'solutions/solutions.html',
         context
     )

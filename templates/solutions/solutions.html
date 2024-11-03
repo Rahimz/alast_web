@@ -6,9 +6,17 @@
 <main class="main_solutions">
 
    <h1 class="main-title">
+      
+      {% if tag %}
+      <span>
+         <span class="mil-thin">{% trans "Tag" %}:</span>
+      </span>{{ tag.name }}
+                       
+      {% else %}
       <span>
          <span class="mil-thin">our</span>
       </span>{% trans "Solutions" %}
+      {% endif %}
    </h1>
 
    {% comment %}
@@ -19,7 +27,7 @@
 
       <section id="solutions">
          <!-- <div class="solutions_top"> -->
-            <h2 class="main-title">
+            <h2 class="main-title">               
                <span>{{ category }}
                   <span class="mil-thin"></span>
                </span>
