@@ -60,6 +60,36 @@ class Solution(TimeStampedModel):
         null=True,
         blank=True
     )
+    product_model = models.CharField(
+        _("Product model"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
+    product_model = models.CharField(
+        _("Product model"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
+    design_date = models.CharField(
+        _("Design date"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
+    designer = models.CharField(
+        _("Designer"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
+    manufacturing_methods = models.CharField(
+        _("Manufacturing methods"),
+        max_length=150,
+        null=True,
+        blank=True
+    )
     description = models.TextField(
         _("Description"),
     )
