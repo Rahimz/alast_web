@@ -16,7 +16,7 @@ class TeamMember(TimeStampedModel):
     )
     avatar = models.ImageField(
         _("Avatar"),
-        upload_to='mutlimedias/team_members/',
+        upload_to='multimedias/team_members/',
     )
     role = models.CharField(
         _("Role"),
