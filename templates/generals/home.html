@@ -7,6 +7,32 @@
 {% include "_slider.html" %}
 {% endcomment %}
 
+{% block head %}
+{# thsi style is used to add sound icon to logo video #}
+<style>
+   /* Basic styling for the video and control */
+   #videoContainer {
+       position: relative;
+       
+   }
+   video {
+       width: 100%;
+       height: auto;
+   }
+   .sound-control {
+       /* position: absolute; */
+       bottom: 10px;
+       left: 10px;
+       background: rgba(0, 0, 0, 0.5);
+       border: none;
+       color: white;
+       padding: 10px;
+       cursor: pointer;
+       border-radius: 5px;
+   }
+</style>  
+{% endblock head %}
+
 <main class="main_home">
 
    <h1 class="main-title">
@@ -29,17 +55,21 @@
       </span>
    </h1>
    <section id="alast_logo">
-      {% if logo_video %}
-      {# <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>  #}
-      <video muted autoplay loop>
-         <source src="{{ logo_video.file.url }}" type="video/mp4">
-         <source src="{{ logo_video.file.url }}" type="video/ogg">
-         <source src="{{ logo_video.file.url }}" type="video/webm">
-         <source src="{{ logo_video.file.url }}" type="video/mov">
-         <source src="{{ logo_video.file.url }}" type="video/mkv">
-       Your browser does not support the video tag.
-       </video>        
-      {% endif %}
+      <div class="videoContainer">
+
+         {% if logo_video %}
+         {# <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>  #}
+         <video muted autoplay loop id="logoVideo" >
+            <source src="{{ logo_video.file.url }}" type="video/mp4">
+            <source src="{{ logo_video.file.url }}" type="video/ogg">
+            <source src="{{ logo_video.file.url }}" type="video/webm">
+            <source src="{{ logo_video.file.url }}" type="video/mov">
+            <source src="{{ logo_video.file.url }}" type="video/mkv">
+            Your browser does not support the video tag.
+         </video>
+         <button class="sound-control" id="soundButton">🔊</button>        
+         {% endif %}
+      </div>
       <p>
          According to the narration of the day when God made his covenant, there was light and then matter; The light of
          existence is imagined to be Lime Green and the darkness is a deep and dark Navy Blue. In analogy, existence is
@@ -89,3 +119,17 @@
 </main>
 
 {% endblock content %}
+
+
+{% block script %}
+<script>
+   const video = document.getElementById('logoVideo');
+   const soundButton = document.getElementById('soundButton');
+
+   // Function to toggle mute/unmute
+   soundButton.addEventListener('click', () => {
+       video.muted = !video.muted; // Toggle the muted property
+       soundButton.textContent = video.muted ? '🔇' : '🔊'; // Change icon based on mute state
+   });
+</script>
+{% endblock script %}

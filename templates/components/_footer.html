@@ -13,7 +13,23 @@
         <a href="{% url 'generals:about_us' %}" class="{% if page_title == 'About us' %}active{% endif %}">{% trans "About us" %}</a>
         <a href="{% url 'generals:contact_us' %}" class="{% if page_title == 'Contact us' %}active{% endif %}">{% trans "Contact us" %}</a>
     </nav>
-    
+
+    <nav>
+    <p style="color: rgb(180, 180,180)">
+        {% comment %} 
+        <!-- Farsi version for future -->
+        شرکت بهین آفرینش الست (استودیو طراحی الست) افتخار دارد ارائه دهنده خدمات متنوع دیزاین به صنعت و جامعه باشد:
+        خدمات طراحی استودیو طراحی عبارتند از: طراحی صنعتی محصولات فیزیکال و دیجیتال، UI/UX، طراحی بسته بندی، طراحی
+        مبلمان شهری، طراحی داخلی، طراحی خدمات و PSS، طراحی خدمات و طراحی گرافیک و گرافیک صنعتی،
+        {% endcomment %}
+        
+        Behin Afrainesh Alast Company (Alast Design Studio) is the provider of various design services including:
+        Physical and Digital Product Design & UI/UX, Packaging Design, Urban Furniture Design, Interior Design,
+        Service Design, PSS Design, Graphic and Industrial Graphic Design.
+    </p>
+    </nav>
+    {% comment %}
+
     <nav>
         <a href="{% url 'generals:home' %}">Addresses</a>
         <a href="{% url 'solutions:solutions' %}">generals</a>
@@ -23,4 +39,5 @@
         <a href="{% url 'solutions:solutions' %}">Social medias</a>
         <a href="{% url 'publications:publications' %}">Branches</a>
     </nav>
+    {% endcomment %}
 </div>
