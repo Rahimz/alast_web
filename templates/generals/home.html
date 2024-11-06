@@ -29,7 +29,17 @@
       </span>
    </h1>
    <section id="alast_logo">
-      <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>
+      {% if logo_video %}
+      {# <video src="{% static 'assets/logo_motion/logo_video.mp4' %}" muted autoplay loop></video>  #}
+      <video muted autoplay loop>
+         <source src="{{ logo_video.file.url }}" type="video/mp4">
+         <source src="{{ logo_video.file.url }}" type="video/ogg">
+         <source src="{{ logo_video.file.url }}" type="video/webm">
+         <source src="{{ logo_video.file.url }}" type="video/mov">
+         <source src="{{ logo_video.file.url }}" type="video/mkv">
+       Your browser does not support the video tag.
+       </video>        
+      {% endif %}
       <p>
          According to the narration of the day when God made his covenant, there was light and then matter; The light of
          existence is imagined to be Lime Green and the darkness is a deep and dark Navy Blue. In analogy, existence is

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from tools.models import TimeStampedModel
+from tools.models import TimeStampedModel, ActiveManager
 
 
 class Contact(TimeStampedModel):
@@ -23,3 +23,20 @@ class Contact(TimeStampedModel):
         verbose_name = _('Contact')
         verbose_name_plural = _('Contacts')
         ordering = ('-id',)
+
+
+class LogoMotion(TimeStampedModel):
+    name = models.CharField(
+        _("Name"),
+        max_length=150,
+    )
+    file = models.FileField(
+        _("File"),
+        upload_to='generals/logo/',
+        help_text=_("Just upload video files"),
+    )
+    active = models.BooleanField(
+        default=True
+    )
+    objects = models.Manager()
+    actives = ActiveManager()

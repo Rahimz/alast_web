@@ -8,6 +8,7 @@ from accounts.models import TeamMember
 from solutions.models import Solution, Award, SolutionCategory
 from multimedias.models import Gallery
 from .forms import ContactForm
+from .models import LogoMotion
 
 
 def HomeView(request):
@@ -16,6 +17,7 @@ def HomeView(request):
         page_title=_("Home"),
         solutions=solutions,
         team_members = TeamMember.objects.all().order_by('rank'),
+        logo_video=LogoMotion.actives.all().order_by('?').first(),
         awards=Award.objects.all(),
     )
     return render(
