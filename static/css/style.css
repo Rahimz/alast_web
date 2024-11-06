@@ -112,6 +112,10 @@ footer div.fbox nav a {
 footer div.fbox nav a:hover, footer div.fbox nav a.active {
   color: #42ae70;
 }
+footer div.fbox P {
+  text-align: justify;
+  color: rgb(180, 180, 180);
+}
 
 @media screen and (max-width: 1023px) {
   footer {
@@ -213,7 +217,8 @@ main {
   width: 80%;
   min-height: 100vh;
   margin: 120px 0 0;
-  padding: 50px 20px;
+  padding: 50px 0px;
+  background-color: rgba(95, 158, 160, 0.171);
 }
 main > h1.main-title {
   text-align: center;

@@ -11,6 +11,7 @@ footer {
         justify-content: space-between;
         align-items: start;
         width: 80%;
+        // padding-right: 20px;
         // background-color: rgb(124, 131, 129);
 
         .fleft {
@@ -37,6 +38,10 @@ footer {
                 margin-bottom: 15px;
                 &:hover, &.active {color: $maincolor;}
             }
+        }
+        P {
+            text-align: justify;
+            color: $g180;
         }
     }
 }
