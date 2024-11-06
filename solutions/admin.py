@@ -6,6 +6,7 @@ from multimedias.models import Image
 class ImageGalleryInline(admin.StackedInline):
     model = Image
     raw_id_fields = ('solution',)
+    exclude = ['zone', 'gallery', 'thumbnail']
     max_num = 2
 
 
