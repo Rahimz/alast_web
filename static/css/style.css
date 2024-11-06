@@ -114,6 +114,7 @@ footer div.fbox nav a:hover, footer div.fbox nav a.active {
 }
 footer div.fbox P {
   text-align: justify;
+  margin: 0;
   color: rgb(180, 180, 180);
 }
 
@@ -218,7 +219,6 @@ main {
   min-height: 100vh;
   margin: 120px 0 0;
   padding: 50px 0px;
-  background-color: rgba(95, 158, 160, 0.171);
 }
 main > h1.main-title {
   text-align: center;
