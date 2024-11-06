@@ -40,13 +40,13 @@ def SolutionView(request, slug):
     )
 
 # should be removed
-def SolutionDetailsView(request):
-    context = dict(
-        page_title=_("Solution"),
-    )
+# def SolutionDetailsView(request):
+#     context = dict(
+#         page_title=_("Solution"),
+#     )
     
-    return render(
-        request,
-        'solutions/solution_details.html',
-        context
-    )
+#     return render(
+#         request,
+#         'solutions/solution_details.html',
+#         context
+#     )

@@ -18,9 +18,11 @@
          </h2> 
          <figure>
          {% if solution.client %}
-         <img src="{{ solution.client.logo.url }}" alt="{{ solution.client }}" height="60px" width="auto">
-         <!-- <figcaption>Client logo</figcaption>      -->
-         {% endif %}
+         <a href="{% url 'clients:clients' %}#{{ solution.client.slug }}">
+            <img src="{{ solution.client.logo.url }}" alt="{{ solution.client }}" height="60px" width="auto">
+            <!-- <figcaption>Client logo</figcaption>      -->
+            {% endif %}
+         </a>
       </figure>
       <div>
          <h3>{% trans "Title" %}</h3>

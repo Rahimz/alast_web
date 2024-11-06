@@ -2,7 +2,7 @@
 
 <div class="solution">
 	<div class="sol_img">
-		<a href="#">
+		<a href="#" id="{{client.slug}}">
 			<img src="{{ client.logo.url }}" alt="">
 		</a>
 	</div>
@@ -14,6 +14,8 @@
 			</a>
 		</div>
 		<br>
-		<a href="#" class="btn btn-white no-rm">Read More<img src="{% static 'assets/g1b.svg' %}"></a>
+		{% for solution in client.solutions.all %}
+		<a href="{% url 'solutions:solution' solution.slug %}" class="btn btn-white no-rm">{{solution.title }}<img src="{% static 'assets/g1b.svg' %}"></a> <br>
+		{% endfor %}
 	</div>    
 </div>
