@@ -56,7 +56,7 @@ header nav a:hover, header nav a.active {
   color: #42ae70;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 900px) {
   header div button {
     display: inline-block;
   }
@@ -68,6 +68,64 @@ header nav a:hover, header nav a.active {
   header {
     position: relative;
     padding: 20px 0;
+  }
+}
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 0;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
 }
 footer, footer div, footer nav {
@@ -216,7 +274,6 @@ body {
 main {
   position: relative;
   width: 80%;
-  min-height: 100vh;
   margin: 120px 0 0;
   padding: 50px 0px;
 }
@@ -227,6 +284,12 @@ main > h1.main-title {
 }
 main > h1.main-title span.mil-thin {
   font-weight: 100;
+}
+main.main_publications {
+  min-height: 50vh;
+}
+main.main_contact {
+  min-height: 70vh;
 }
 
 section {
@@ -538,6 +601,12 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   margin: 20px 0;
   width: 100%;
 }
+section#solutions .solution_box .client, section#publications .solution_box .client, section#clients .solution_box .client {
+  width: 22vw;
+}
+section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+  height: 12vw;
+}
 
 @media screen and (max-width: 1200px) {
   section#gallery .gallery {
@@ -555,6 +624,9 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   }
   section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
     height: 28vw;
+  }
+  section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+    height: 15vw;
   }
 }
 @media screen and (max-width: 767px) {
@@ -595,6 +667,9 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
     height: 60vw;
   }
+  section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+    height: 15vw;
+  }
 }
 #contacts, #sendmessage {
   align-items: center;
@@ -603,10 +678,12 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
 section#contacts {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
 }
 section#contacts div {
   width: 48%;
-  background-color: #f9f9f9;
+  background-color: #e4e3e3;
   margin-right: 4%;
   padding: 80px 50px;
 }
@@ -661,6 +738,16 @@ section#contacts div:nth-child(2n) {
   color: #42ae70;
 }
 
+@media screen and (max-width: 767px) {
+  section#contacts {
+    flex-direction: column;
+  }
+  section#contacts div {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
 section#solutions .solutions_top, section#publications .solutions_top {
   display: flex;
   justify-content: space-between;
@@ -668,6 +755,63 @@ section#solutions .solutions_top, section#publications .solutions_top {
   background-color: yellowgreen;
 }
 
+main.main_solution .s-base {
+  display: flex;
+  justify-content: space-between;
+}
+main.main_solution .s-base .s-right {
+  width: 60%;
+}
+main.main_solution .s-base .s-right img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+main.main_solution .s-base .s-left {
+  width: 35%;
+}
+main.main_solution .s-base .s-left .sinfo {
+  padding: 15px 0;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .sinfo:last-child {
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .sinfo span {
+  color: rgb(180, 180, 180);
+}
+main.main_solution .s-base .s-left h3 {
+  margin-top: 50px;
+}
+main.main_solution .s-base .s-left p {
+  margin-bottom: 50px;
+  color: rgb(180, 180, 180);
+}
+main.main_solution .s-base .s-left .stags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  padding-top: 5px;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .stags a {
+  margin: 0 5px 5px 0;
+  padding: 3px 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #42ae70;
+}
+main.main_solution .s-base .s-left .stags a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+  main.main_solution .s-base {
+    flex-direction: column;
+  }
+  main.main_solution .s-base .s-left, main.main_solution .s-base .s-right {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1023px) {
   .crumbbox .crumbline {
     width: 5vw;

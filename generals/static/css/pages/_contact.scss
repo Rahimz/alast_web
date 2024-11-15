@@ -3,11 +3,13 @@
 section#contacts {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
     // background-color: aquamarine;
 
     div {
         width: 48%;
-        background-color: #f9f9f9;
+        background-color: #e4e3e3;
         margin-right: 4%;
         padding: 80px 50px;
         // border-radius: 30px;
@@ -40,6 +42,21 @@ section#contacts {
             // background-color: aquamarine;
             span {color: $g180;}
             span::before {content: "* "; color: $maincolor;}
+        }
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    section#contacts {
+        flex-direction: column;
+        div {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
         }
     }
 }
