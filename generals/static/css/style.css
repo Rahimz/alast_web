@@ -543,6 +543,12 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   margin: 20px 0;
   width: 100%;
 }
+section#solutions .solution_box .client, section#publications .solution_box .client, section#clients .solution_box .client {
+  width: 22vw;
+}
+section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+  height: 12vw;
+}
 
 @media screen and (max-width: 1200px) {
   section#gallery .gallery {
@@ -560,6 +566,9 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   }
   section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
     height: 28vw;
+  }
+  section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+    height: 15vw;
   }
 }
 @media screen and (max-width: 767px) {
@@ -599,6 +608,9 @@ section#solutions .solution_box .solution p, section#publications .solution_box 
   }
   section#solutions .solution_box .solution .sol_img, section#publications .solution_box .solution .sol_img, section#clients .solution_box .solution .sol_img {
     height: 60vw;
+  }
+  section#solutions .solution_box .client .sol_img, section#publications .solution_box .client .sol_img, section#clients .solution_box .client .sol_img {
+    height: 15vw;
   }
 }
 #contacts, #sendmessage {
