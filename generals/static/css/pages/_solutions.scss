@@ -1,7 +1,4 @@
-main.main_solutions section {}
-
 section#solutions, section#publications {
-
     .solutions_top {
         // width: 100%;
         display: flex;
@@ -9,4 +6,64 @@ section#solutions, section#publications {
         align-items: center;
         background-color: yellowgreen;
     }
+}
+
+
+
+// each solution
+main.main_solution {
+    .s-base {
+        display: flex; justify-content: space-between;
+
+        // .s-left, .s-right {background-color: bisque;}
+        .s-right {
+            width: 60%;
+            img {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        .s-left {
+            width: 35%;
+            .sinfo {
+                // background-color: brown;
+                padding: 15px 0;
+                border-top: 1px solid $g220;
+                &:last-child {border-bottom: 1px solid $g220;}
+                span {color: $g180;}
+            }
+            h3 {margin-top: 50px;}
+            p {margin-bottom: 50px; color: $g180;}
+            .stags {
+                display: flex; flex-wrap: wrap;
+                margin-bottom: 70px;
+                padding-top: 5px;
+                border-top: 1px solid $g220;
+                // background-color: cadetblue;
+                a {
+                    margin: 0 5px 5px 0;
+                    padding: 3px 10px; 
+                    border-radius: 5px; 
+				    color: white; 
+                    background-color: $maincolor;
+                    &:hover {opacity: 0.8;}
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    main.main_solution {
+    .s-base {
+        flex-direction: column;
+        .s-left, .s-right {width: 100%;}
+    }
+}
 }

@@ -238,6 +238,7 @@ section {
   display: flex;
   flex-direction: column;
   margin: 0 0 80px;
+  background-color: #f1cece;
 }
 section:last-child {
   margin: 0;
@@ -697,6 +698,63 @@ section#solutions .solutions_top, section#publications .solutions_top {
   background-color: yellowgreen;
 }
 
+main.main_solution .s-base {
+  display: flex;
+  justify-content: space-between;
+}
+main.main_solution .s-base .s-right {
+  width: 60%;
+}
+main.main_solution .s-base .s-right img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+main.main_solution .s-base .s-left {
+  width: 35%;
+}
+main.main_solution .s-base .s-left .sinfo {
+  padding: 15px 0;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .sinfo:last-child {
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .sinfo span {
+  color: rgb(180, 180, 180);
+}
+main.main_solution .s-base .s-left h3 {
+  margin-top: 50px;
+}
+main.main_solution .s-base .s-left p {
+  margin-bottom: 50px;
+  color: rgb(180, 180, 180);
+}
+main.main_solution .s-base .s-left .stags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  padding-top: 5px;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+main.main_solution .s-base .s-left .stags a {
+  margin: 0 5px 5px 0;
+  padding: 3px 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #42ae70;
+}
+main.main_solution .s-base .s-left .stags a:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+  main.main_solution .s-base {
+    flex-direction: column;
+  }
+  main.main_solution .s-base .s-left, main.main_solution .s-base .s-right {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1023px) {
   .crumbbox .crumbline {
     width: 5vw;

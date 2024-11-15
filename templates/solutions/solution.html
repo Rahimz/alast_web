@@ -3,92 +3,108 @@
 {% block title %}{{ page_title }}{% endblock title %}
 
 {% block content %}
-<main>
+<main class="main_solution">
 
-   <section>
-         <h1>{% trans "Solution" %}</h1> 
-         <h2>
-         
-         {% trans "Client" %}:
-         {% if solution.client %}
-         {{ solution.client }}
-         {% else %}
-         ---
-         {% endif %}
-         </h2> 
-         <figure>
-         {% if solution.client %}
-         <a href="{% url 'clients:clients' %}#{{ solution.client.slug }}">
-            <img src="{{ solution.client.logo.url }}" alt="{{ solution.client }}" height="60px" width="auto">
-            <!-- <figcaption>Client logo</figcaption>      -->
-            {% endif %}
-         </a>
-      </figure>
-      <div>
-         <h3>{% trans "Title" %}</h3>
-         <p>{{ solution.title }}</p>
-         
-         {% if solution.designer %}
-         <h3>{% trans "Designer" %}</h3>
-         <p>{{ solution.designer }}</p>           
-         {% endif %}
-         
-         {% if solution.design_date %}
-         <h3>{% trans "Design date" %}</h3>
-         <p>{{ solution.design_date }}</p>           
-         {% endif %}
-         
-         {% if solution.product_model %}
-         <h3>{% trans "Product model" %}</h3>
-         <p>{{ solution.product_model }}</p>           
-         {% endif %}
-         
-         {% if solution.manufacturing_methods %}
-         <h3>{% trans "Manufacturing methods" %}</h3>
-         <p>{{ solution.manufacturing_methods }}</p>           
-         {% endif %}
+	<h1 class="main-title">
+		<span>{{ solution.title }}
+		   <!-- <span class="mil-thin"></span> -->
+		</span>
+	</h1>
 
-         <div>
-            {% if solution.cover_image %}
-              <img src="{{ solution.cover_image.url }}" alt="" width="100%" height="auto">
-            {% endif %}            
-         </div>
+    <div class="s-base">
+		<div class="s-left">
+			<div>
+				{% if solution.client %}
+				<div class="sinfo">
+					<span>{% trans "Client" %}:</span>
+					{{ solution.client }}
+				</div>
+				{% endif %}
 
-         <h3>{% trans "Project description" %}</h3>
-         <p>
-            {{ solution.description | linebreaksbr }}     
-         </p>
-      </div>
-      {% if solution.tags %}
-      <div>
-         {% for tag in solution.tags.all %}
-			<a href="{% url 'generals:tags' tag.slug %}" style="border: 1px solid; border-radius: 10px; padding: 2px 6px; color: white; background-color: #42ae70; margin: 5px;"><span>{{ tag.name }}</span></a>            
-			{% endfor %}
-        
-      </div>
-      {% endif %}
+				{% if solution.designer %}</span>
+				<div class="sinfo">
+					<span>{% trans "Designer" %}</span>
+					{{ solution.designer }}           
+				</div>
+				{% endif %}
 
-      <div>
-         {% if solution.images.all %}
-           
-         <h3>{% trans "Project gallery" %}</h3>
-         {% for item in solution.images.all %}
-         <div>
-            
-            <a href="{{ item.file.url }}" target="_blank">
-               <img src="{{ item.file.url }}" alt="item.title" height="250" width="auto">
-            </a>
-            <br>
-            {% if item.title %}
-            {{ item.title }}
-            {% endif %}
-            
-         </div>
-         {% endfor %}
-         
-         {% endif %}
-      </div>
-   </section>
+				{% if solution.design_date %}
+				<div class="sinfo">
+					<span>{% trans "Design date" %}</span>
+					{{ solution.design_date }}           
+				</div>
+				{% endif %}
+
+				{% if solution.design_date %}
+				<div class="sinfo">
+					<span>{% trans "Design date" %}</span>
+					{{ solution.design_date }}           
+				</div>
+				{% endif %}
+
+				{% if solution.product_model %}
+				<div class="sinfo">
+					<span>{% trans "Product model" %}</span>
+					{{ solution.product_model }}           
+				</div>
+				{% endif %}
+
+				{% if solution.manufacturing_methods %}
+				<div class="sinfo">
+					<span>{% trans "Manufacturing methods" %}</span>
+					{{ solution.manufacturing_methods }}           
+				</div>
+				{% endif %}
+			</div>
+
+			<h3>{% trans "Project description" %}</h3>
+			<p>{{ solution.description | linebreaksbr }}</p>
+
+			<!-- {% if solution.tags %} -->
+			<div class="stags">
+				<!-- {% for tag in solution.tags.all %}
+				<a href="{% url 'generals:tags' tag.slug %}" style="border: 1px solid; border-radius: 10px; padding: 2px 6px; color: white; background-color: #42ae70; margin: 5px;"><span>{{ tag.name }}</span></a>            
+				{% endfor %} -->
+				<a href="#"><span>firstTag</span></a>
+				<a href="#"><span>secorstTag</span></a>
+				<a href="#"><span>sdftTag</span></a>
+				<a href="#"><span>sfsdfsd-ag</span></a>
+				<a href="#"><span>secortTag</span></a>
+			</div>
+			<!-- {% endif %} -->
+		</div>
+
+		<div class="s-right">
+			{% if solution.cover_image %}
+				<img src="{{ solution.cover_image.url }}" alt="" width="100%" height="auto">
+			{% endif %}
+
+			{% if solution.images.all %}
+				<!-- <h3>{% trans "Project gallery" %}</h3> -->
+				{% for item in solution.images.all %}
+					<!-- <a href="{{ item.file.url }}" target="_blank"> -->
+					<img src="{{ item.file.url }}" alt="item.title" height="250" width="auto">
+					<!-- </a>
+					<br>
+					{% if item.title %}
+					{{ item.title }}
+					{% endif %} -->
+				{% endfor %}			
+			{% endif %}
+		</div>
+    </div>
    
+	
+
+    {% comment %}
+	<figure>
+		{% if solution.client %}
+		<a href="{% url 'clients:clients' %}#{{ solution.client.slug }}">
+			<img src="{{ solution.client.logo.url }}" alt="{{ solution.client }}" height="60px" width="auto">
+			<!-- <figcaption>Client logo</figcaption>      -->
+			{% endif %}
+		</a>
+	</figure>
+	{% endcomment %}
 </main>
 {% endblock content %}
