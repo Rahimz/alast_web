@@ -1,5 +1,6 @@
 @import "components/vars";
 @import "components/header";
+@import "components/mobile";
 @import "components/footer";
 
 html {scroll-behavior: smooth;}
@@ -46,7 +47,6 @@ body {
 main {
     position: relative;
     width: 80%;
-    min-height: 100vh;
     margin: 120px 0 0;
     padding: 50px 0px;
     // background: url("../assets/alast-test.svg") no-repeat top right;
@@ -60,6 +60,8 @@ main {
         // background-color: blueviolet;
         span.mil-thin {font-weight: 100;}
     }
+    &.main_publications {min-height: 50vh;}
+    &.main_contact {min-height: 70vh;}
 }
 section {
     display: flex;
