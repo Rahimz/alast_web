@@ -62,14 +62,17 @@
 
 			<!-- {% if solution.tags %} -->
 			<div class="stags">
-				<!-- {% for tag in solution.tags.all %}
+				{% for tag in solution.tags.all %}
+				<a href="{% url 'generals:tags' tag.slug %}"><span>{{ tag.name }}</span></a>            
+				{% endfor %} 
+				{% comment %}				  
 				<a href="{% url 'generals:tags' tag.slug %}" style="border: 1px solid; border-radius: 10px; padding: 2px 6px; color: white; background-color: #42ae70; margin: 5px;"><span>{{ tag.name }}</span></a>            
-				{% endfor %} -->
 				<a href="#"><span>firstTag</span></a>
 				<a href="#"><span>secorstTag</span></a>
 				<a href="#"><span>sdftTag</span></a>
 				<a href="#"><span>sfsdfsd-ag</span></a>
 				<a href="#"><span>secortTag</span></a>
+				{% endcomment %}
 			</div>
 			<!-- {% endif %} -->
 		</div>
