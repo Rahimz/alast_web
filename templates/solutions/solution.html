@@ -79,14 +79,14 @@
 
 		<div class="s-right">
 			{% if solution.cover_image %}
-				<img src="{{ solution.cover_image.url }}" alt="" width="100%" height="auto">
+				<img src="{{ solution.cover_image.url }}" alt="">
 			{% endif %}
 
 			{% if solution.images.all %}
 				<!-- <h3>{% trans "Project gallery" %}</h3> -->
 				{% for item in solution.images.all %}
 					<!-- <a href="{{ item.file.url }}" target="_blank"> -->
-					<img src="{{ item.file.url }}" alt="item.title" height="250" width="auto">
+					<img src="{{ item.file.url }}" alt="item.title">
 					<!-- </a>
 					<br>
 					{% if item.title %}
